@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAVI - Contactanos</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header__search">
+            <input type="text" placeholder="Buscar productos..." class="search-bar">
+        </div>
+        <div class="header__logo">
+            <img src="../img/logo.png" alt="Logo del local" class="logo">
+        </div>
+        <div class="header__icons">
+            <img src="../img/acceso.png" alt="Login" class="icon">
+            <img src="../img/carrito-de-compras.png" alt="Carrito" class="icon">
+        </div>
+    </header>
+
+    <nav class="nav-bar">
+        <ul class="nav-menu">
+            <li><a href="../index.html" class="nav-link">Inicio</a></li>
+            <li><a href="./productos.html" class="nav-link">Productos</a></li>
+            <li><a href="./promos.html" class="nav-link">Promos</a></li>
+            <li><a href="./nosotros.html" class="nav-link">Nosotros</a></li>
+            <li><a href="./contactanos.html" class="nav-link">Contactanos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Contacto -->
+    <section class="contacto-titulo">
+        <div class="contacto-info">
+            <h2>Contacto</h2>
+
+            <div class="contacto-atencion">
+                <img src="../img/contactanos/whatsapp.png" alt="WhatsApp" class="contacto-icon">
+                <p>+54 xxxxxxxxx</p>
+            </div>
+
+            <div class="contacto-atencion">
+                <img src="../img/contactanos/llamada-telefonica.png" alt="Teléfono" class="contacto-icon">
+                <p>+54 xxxxxxxxx</p>
+            </div>
+
+            <div class="contacto-atencion">
+                <img src="../img/contactanos/mapas-y-banderas.png" alt="Dirección" class="contacto-icon">
+                <p>Calle, Ciudad, País</p>
+            </div>
+        </div>
+
+        <div class="contacto-formulario">
+            <form action="#" method="post">
+                <label for="nombre">Nombre</label>
+                <input type="texto" id="nombre" name="nombre" placeholder="Ej: Maria Perez" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Ej: tuemail@email.com" required>
+
+                <label for="telefono">Teléfono</label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 123456678" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" placeholder="Ej: Tu mensaje" rows="5" required></textarea>
+
+                <button type="enviar" class="enviar-btn">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-item">© 2024 PAVI - Todos los derechos reservados</div>
+        <div class="footer-item">Ciudad, Provincia, País</div>
+        <div class="footer-item">Tel: +54 x xxxxxxx</div>
+        <div class="footer-item footer-redes">
+            <span>Redes Sociales:</span>
+            <img src="../img/instagram.png" alt="Instagram" class="redes-icono">
+            <img src="../img/facebook.png" alt="Facebook" class="redes-icono">
+            <img src="../img/whatsapp.png" alt="WhatsApp" class="redes-icono">
+        </div>
+    </footer>
+
+</body>
+</html>
