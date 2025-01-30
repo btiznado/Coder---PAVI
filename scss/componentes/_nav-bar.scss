@@ -1,0 +1,21 @@
+.nav-bar {
+    background-color: #727171;
+    padding: 10px 20px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+.nav-link:hover {
+    color: #000000;
+}

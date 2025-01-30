@@ -1,0 +1,30 @@
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: auto;
+    width: 100%;
+}
+
+.footer-item {
+    flex: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+.footer-redes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.redes-icono {
+    width: 24px;
+    height: 24px;
+}
