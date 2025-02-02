@@ -1,57 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAVI</title>
-<!--Bootstrap CSS-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<!--<link rel="stylesheet" href="./css/style.css">-->
-<link rel="stylesheet" href="./css/estilos.css">
-<!--carrusel -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+    <title>PAVI - Pastas Caseras</title>
+
+    <meta name="description" content="Disfruta de las mejores pastas caseras, salsas y quesos en PAVI. Productos frescos y de alta calidad.">
+    <meta name="keywords" content="pastas caseras, salsas, quesos, comida italiana, productos frescos">
+    <meta name="author" content="PAVI">
+    
+    <meta property="og:title" content="PAVI - Pastas Caseras">
+    <meta property="og:description" content="Disfruta de la mejor comida casera con ingredientes de calidad.">
+    <meta property="og:image" content="./img/banner/banner-1.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="./css/estilos.css">
+
+    <!-- Bootstrap JS  -->
+    <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     <header class="header">
         <div class="header__search">
-            <input type="text" placeholder="Buscar productos..." class="search-bar">
+            <input type="text" placeholder="Buscar productos..." class="search-bar" aria-label="Buscar productos">
         </div>
         <div class="header__logo">
-            <img src="./img/logo.png" alt="Logo del local" class="logo">
+            <img src="./img/logo.png" alt="Logo de PAVI - Pastas Caseras" class="logo">
         </div>
         <div class="header__icons">
-            <img src="./img/acceso.png" alt="Login" class="icon">
-            <img src="./img/carrito-de-compras.png" alt="Carrito" class="icon">
+            <a href="./login.html"><img src="./img/acceso.png" alt="Iniciar sesión" class="icon"></a>
+            <a href="./carrito.html"><img src="./img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon"></a>
         </div>
     </header>
 
     <nav class="nav-bar">
         <ul class="nav-menu">
-            <li><a href="./index.html" class="nav-link">Inicio</a></li>
-            <li><a href="./pages/productos.html" class="nav-link">Productos</a></li>
-            <li><a href="./pages/promos.html" class="nav-link">Promos</a></li>
-            <li><a href="./pages/nosotros.html" class="nav-link">Nosotros</a></li>
-            <li><a href="./pages/contactanos.html" class="nav-link">Contactanos</a></li>
+            <li><a href="./index.html" class="nav-link" aria-label="Ir a inicio">Inicio</a></li>
+            <li><a href="./pages/productos.html" class="nav-link" aria-label="Ver productos">Productos</a></li>
+            <li><a href="./pages/promos.html" class="nav-link" aria-label="Ver promociones">Promos</a></li>
+            <li><a href="./pages/nosotros.html" class="nav-link" aria-label="Conócenos">Nosotros</a></li>
+            <li><a href="./pages/contactanos.html" class="nav-link" aria-label="Contáctanos">Contáctanos</a></li>
         </ul>
     </nav>
     
     <section id="carouselBanner" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="./img/banner/banner-1.jpg" alt="Banner local 1" class="d-block w-100">
+                <img src="./img/banner/banner-1.jpg" alt="Pastas caseras de PAVI" class="d-block w-100">
                 <div class="carousel-caption">
                     <h5>LA PASTA SE DISFRUTA MÁS SI ES CASERA</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./img/banner/banner-2.jpg" alt="Banner local 2" class="d-block w-100">
+                <img src="./img/banner/banner-2.jpg" alt="Plato de pastas con salsa casera" class="d-block w-100">
                 <div class="carousel-caption">
                     <h5>¡Disfruta el sabor casero en cada bocado!</h5>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="./img/banner/banner-3.jpg" alt="Banner local 3" class="d-block w-100">
+                <img src="./img/banner/banner-3.jpg" alt="Pastas frescas y salsas" class="d-block w-100">
                 <div class="carousel-caption">
                     <h5>Tradición y calidad en cada plato</h5>
                 </div>
@@ -60,24 +73,22 @@
     </section>
 
     <section class="productos-seccion">
-    <div class="productos-item">
-        <img src="./img/seccion index/pasta.jpg" alt="Pastas" class="imagen">
-        <div class="texto-seccion-prod">Pastas</div>
-        <button class="ver-mas-btn">Ver Más</button>
-    </div>
-    <div class="productos-item">
-        <img src="./img/seccion index/salsas.jpg" alt="Salsas" class="imagen">
-        <div class="texto-seccion-prod">Salsas</div>
-        <button class="ver-mas-btn">Ver Más</button>
-    </div>
-    <div class="productos-item">
-        <img src="./img/seccion index/quesos.jpg" alt="Quesos" class="imagen">
-        <div class="texto-seccion-prod">Quesos</div>
-        <button class="ver-mas-btn">Ver Más</button>
-    </div>
-	</section>
-
-    
+        <div class="productos-item">
+            <img src="./img/seccion index/pasta.jpg" alt="Variedad de pastas frescas" class="imagen">
+            <div class="texto-seccion-prod">Pastas</div>
+            <button class="ver-mas-btn">Ver Más</button>
+        </div>
+        <div class="productos-item">
+            <img src="./img/seccion index/salsas.jpg" alt="Salsas caseras y naturales" class="imagen">
+            <div class="texto-seccion-prod">Salsas</div>
+            <button class="ver-mas-btn">Ver Más</button>
+        </div>
+        <div class="productos-item">
+            <img src="./img/seccion index/quesos.jpg" alt="Quesos de calidad premium" class="imagen">
+            <div class="texto-seccion-prod">Quesos</div>
+            <button class="ver-mas-btn">Ver Más</button>
+        </div>
+    </section>
 
     <footer class="footer">
         <div class="footer-item">© 2024 PAVI - Todos los derechos reservados</div>
@@ -85,9 +96,9 @@
         <div class="footer-item">Tel: +54 x xxxxxxx</div>
         <div class="footer-item footer-redes">
             <span>Redes Sociales:</span>
-            <img src="./img/instagram.png" alt="Instagram" class="redes-icono">
-            <img src="./img/facebook.png" alt="Facebook" class="redes-icono">
-            <img src="./img/whatsapp.png" alt="WhatsApp" class="redes-icono">
+            <a href="https://instagram.com" target="_blank"><img src="./img/instagram.png" alt="Instagram de PAVI" class="redes-icono"></a>
+            <a href="https://facebook.com" target="_blank"><img src="./img/facebook.png" alt="Facebook de PAVI" class="redes-icono"></a>
+            <a href="https://wa.me/+54xxxxxxxxx" target="_blank"><img src="./img/whatsapp.png" alt="WhatsApp de PAVI" class="redes-icono"></a>
         </div>
     </footer>
 </body>

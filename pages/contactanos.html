@@ -3,51 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAVI - Contactanos</title>
-    <!--<link rel="stylesheet" href="../css/style.css">-->
+    <title>Contáctanos | PAVI - Pastas Caseras</title>
+
+    <meta name="description" content="Ponte en contacto con PAVI para realizar pedidos o consultas sobre nuestras pastas caseras, salsas y quesos artesanales.">
+    <meta name="keywords" content="contacto, pastas caseras, salsas, quesos, pedidos, consultas">
+    <meta name="author" content="PAVI">
+    
+    <!-- redes sociales -->
+    <meta property="og:title" content="Contáctanos | PAVI - Pastas Caseras">
+    <meta property="og:description" content="Ponte en contacto con PAVI para realizar pedidos o consultas sobre nuestras pastas caseras, salsas y quesos artesanales.">
+    <meta property="og:image" content="../img/banner/banner-1.jpg">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contáctanos | PAVI - Pastas Caseras">
+    <meta name="twitter:description" content="Ponte en contacto con PAVI para realizar pedidos o consultas sobre nuestras pastas caseras, salsas y quesos artesanales.">
+    <meta name="twitter:image" content="../img/banner/banner-1.jpg">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
+
 <body>
     <header class="header">
         <div class="header__search">
-            <input type="text" placeholder="Buscar productos..." class="search-bar">
+            <input type="text" placeholder="Buscar productos..." class="search-bar" aria-label="Buscar productos">
         </div>
         <div class="header__logo">
-            <img src="../img/logo.png" alt="Logo del local" class="logo">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo">
+            </a>
         </div>
         <div class="header__icons">
-            <img src="../img/acceso.png" alt="Login" class="icon">
-            <img src="../img/carrito-de-compras.png" alt="Carrito" class="icon">
+            <a href="../login.html"><img src="../img/acceso.png" alt="Iniciar sesión" class="icon"></a>
+            <a href="../carrito.html"><img src="../img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon"></a>
         </div>
     </header>
 
     <nav class="nav-bar">
         <ul class="nav-menu">
-            <li><a href="../index.html" class="nav-link">Inicio</a></li>
-            <li><a href="./productos.html" class="nav-link">Productos</a></li>
-            <li><a href="./promos.html" class="nav-link">Promos</a></li>
-            <li><a href="./nosotros.html" class="nav-link">Nosotros</a></li>
-            <li><a href="./contactanos.html" class="nav-link">Contactanos</a></li>
+            <li><a href="../index.html" class="nav-link" aria-label="Inicio">Inicio</a></li>
+            <li><a href="./productos.html" class="nav-link" aria-label="Productos">Productos</a></li>
+            <li><a href="./promos.html" class="nav-link" aria-label="Promociones">Promos</a></li>
+            <li><a href="./nosotros.html" class="nav-link" aria-label="Nosotros">Nosotros</a></li>
+            <li><a href="./contactanos.html" class="nav-link" aria-label="Contáctanos">Contáctanos</a></li>
         </ul>
     </nav>
 
     <!-- Sección de Contacto -->
     <section class="contacto-titulo">
         <div class="contacto-info">
-            <h2>Contacto</h2>
+            <h1>Contáctanos</h1>
 
             <div class="contacto-atencion">
-                <img src="../img/contactanos/whatsapp.png" alt="WhatsApp" class="contacto-icon">
-                <p>+54 xxxxxxxxx</p>
+                <img src="../img/contactanos/whatsapp.png" alt="Contacto por WhatsApp" class="contacto-icon">
+                <p><a href="https://wa.me/+54xxxxxxxxxx" target="_blank" rel="noopener">+54 xxxxxxxxx</a></p>
             </div>
 
             <div class="contacto-atencion">
-                <img src="../img/contactanos/llamada-telefonica.png" alt="Teléfono" class="contacto-icon">
-                <p>+54 xxxxxxxxx</p>
+                <img src="../img/contactanos/llamada-telefonica.png" alt="Llamar por teléfono" class="contacto-icon">
+                <p><a href="tel:+54xxxxxxxxxx">+54 xxxxxxxxx</a></p>
             </div>
 
             <div class="contacto-atencion">
-                <img src="../img/contactanos/mapas-y-banderas.png" alt="Dirección" class="contacto-icon">
+                <img src="../img/contactanos/mapas-y-banderas.png" alt="Ubicación de PAVI" class="contacto-icon">
                 <p>Calle, Ciudad, País</p>
             </div>
         </div>
@@ -55,18 +74,18 @@
         <div class="contacto-formulario">
             <form action="#" method="post">
                 <label for="nombre">Nombre</label>
-                <input type="texto" id="nombre" name="nombre" placeholder="Ej: Maria Perez" required>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej: María Pérez" required autocomplete="name">
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Ej: tuemail@email.com" required>
+                <input type="email" id="email" name="email" placeholder="Ej: tuemail@email.com" required autocomplete="email">
 
                 <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 123456678" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Ej: 123456678" required autocomplete="tel">
 
                 <label for="mensaje">Mensaje</label>
                 <textarea id="mensaje" name="mensaje" placeholder="Ej: Tu mensaje" rows="5" required></textarea>
 
-                <button type="enviar" class="enviar-btn">Enviar</button>
+                <input type="submit" value="Enviar" class="enviar-btn">
             </form>
         </div>
     </section>
@@ -74,14 +93,13 @@
     <footer class="footer">
         <div class="footer-item">© 2024 PAVI - Todos los derechos reservados</div>
         <div class="footer-item">Ciudad, Provincia, País</div>
-        <div class="footer-item">Tel: +54 x xxxxxxx</div>
+        <div class="footer-item">Tel: <a href="tel:+54xxxxxxxxxx">+54 xxxxxxxxx</a></div>
         <div class="footer-item footer-redes">
-            <span>Redes Sociales:</span>
-            <img src="../img/instagram.png" alt="Instagram" class="redes-icono">
-            <img src="../img/facebook.png" alt="Facebook" class="redes-icono">
-            <img src="../img/whatsapp.png" alt="WhatsApp" class="redes-icono">
+            <span>Síguenos en:</span>
+            <a href="https://instagram.com" target="_blank" rel="noopener"><img src="../img/instagram.png" alt="Instagram de PAVI" class="redes-icono"></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener"><img src="../img/facebook.png" alt="Facebook de PAVI" class="redes-icono"></a>
+            <a href="https://wa.me/+54xxxxxxxxx" target="_blank" rel="noopener"><img src="../img/whatsapp.png" alt="WhatsApp de PAVI" class="redes-icono"></a>
         </div>
     </footer>
-
 </body>
 </html>

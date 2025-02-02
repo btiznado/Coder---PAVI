@@ -1,108 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAVI - Productos</title>
-    <!--<link rel="stylesheet" href="../css/style.css">-->
+    <title>Productos | PAVI - Pastas Caseras Artesanales</title>
+
+    <meta name="description" content="Descubre la variedad de productos de PAVI: pastas caseras, salsas artesanales y quesos seleccionados para acompañar tus comidas.">
+    <meta name="keywords" content="pastas caseras, salsas, quesos, pasta artesanal, comida italiana, PAVI">
+    <meta name="author" content="PAVI">
+
+    <!-- Redes Sociales -->
+    <meta property="og:title" content="Productos | PAVI - Pastas Caseras Artesanales">
+    <meta property="og:description" content="Descubre la variedad de productos de PAVI: pastas caseras, salsas artesanales y quesos seleccionados para acompañar tus comidas.">
+    <meta property="og:image" content="../img/productos/pasta-fina.jpg">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Productos | PAVI - Pastas Caseras Artesanales">
+    <meta name="twitter:description" content="Descubre la variedad de productos de PAVI: pastas caseras, salsas artesanales y quesos seleccionados para acompañar tus comidas.">
+    <meta name="twitter:image" content="../img/productos/pasta-fina.jpg">
+
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
-</head>
 <body>
+
     <header class="header">
         <div class="header__search">
-            <input type="text" placeholder="Buscar productos..." class="search-bar">
+            <input type="text" placeholder="Buscar productos..." class="search-bar" aria-label="Buscar productos">
         </div>
         <div class="header__logo">
-            <img src="../img/logo.png" alt="Logo del local" class="logo">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo">
+            </a>
         </div>
         <div class="header__icons">
-            <img src="../img/acceso.png" alt="Login" class="icon">
-            <img src="../img/carrito-de-compras.png" alt="Carrito" class="icon">
+            <a href="../login.html"><img src="../img/acceso.png" alt="Iniciar sesión" class="icon"></a>
+            <a href="../carrito.html"><img src="../img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon"></a>
         </div>
     </header>
 
     <nav class="nav-bar">
         <ul class="nav-menu">
-            <li><a href="../index.html" class="nav-link">Inicio</a></li>
-            <li><a href="./productos.html" class="nav-link">Productos</a></li>
-            <li><a href="./promos.html" class="nav-link">Promos</a></li>
-            <li><a href="./nosotros.html" class="nav-link">Nosotros</a></li>
-            <li><a href="./contactanos.html" class="nav-link">Contactanos</a></li>
+            <li><a href="../index.html" class="nav-link" aria-label="Inicio">Inicio</a></li>
+            <li><a href="./productos.html" class="nav-link" aria-label="Productos">Productos</a></li>
+            <li><a href="./promos.html" class="nav-link" aria-label="Promociones">Promos</a></li>
+            <li><a href="./nosotros.html" class="nav-link" aria-label="Nosotros">Nosotros</a></li>
+            <li><a href="./contactanos.html" class="nav-link" aria-label="Contáctanos">Contáctanos</a></li>
         </ul>
     </nav>
 
+    <!-- Sección Productos -->
     <section class="productos-seccion">
         <div class="productos-titulo">
-            <h2>Productos</h2>
+            <h1>Nuestros Productos</h1>
+            <p>Descubre nuestra selección de <strong>pastas frescas</strong>, <strong>salsas artesanales</strong> y <strong>quesos gourmet</strong>.</p>
         </div>
-    
+
         <div class="productos-categorias">
-            <ul>
-                <li>Pastas</li>
-                <li>Salsas</li>
-                <li>Quesos</li>
-            </ul>
+            <button type="button" aria-label="Ver pastas">Pastas</button>
+            <button type="button" aria-label="Ver salsas">Salsas</button>
+            <button type="button" aria-label="Ver quesos">Quesos</button>
         </div>
-    
+
         <div class="productos-venta">
             <div class="productos-fila">
                 <div class="producto-item">
-                    <img src="../img/productos/pasta fina.jpg" alt="Pasta fina" class="producto-imagen">
+                    <div class="imagen-contenedor">
+                        <img src="../img/productos/pasta fina.jpg" alt="Pasta fina artesanal" class="producto-imagen">
+                    </div>
                     <p class="producto-descripcion">Pasta Fina</p>
                     <p class="producto-precio">$1500</p>
                 </div>
+                
                 <div class="producto-item">
-                    <img src="../img/productos/pasta de huevo.jpg" alt="Pasta de huevo" class="producto-imagen">
+                    <div class="imagen-contenedor">
+                        <img src="../img/productos/pasta de huevo.jpg" alt="Pasta de huevo casera" class="producto-imagen">
+                    </div>
                     <p class="producto-descripcion">Pasta de Huevo</p>
                     <p class="producto-precio">$2000</p>
                 </div>
+                
                 <div class="producto-item">
-                    <img src="../img/productos/salsa marinara.jpg" alt="Salsa marinara" class="producto-imagen">
+                    <div class="imagen-contenedor">
+                        <img src="../img/productos/salsa marinara.jpg" alt="Salsa marinara italiana" class="producto-imagen">
+                    </div>
                     <p class="producto-descripcion">Salsa Marinara</p>
                     <p class="producto-precio">$1000</p>
                 </div>
+                
                 <div class="producto-item">
-                    <img src="../img/productos/queso parmesano.jpg" alt="Queso parmesano" class="producto-imagen">
+                    <div class="imagen-contenedor">
+                        <img src="../img/productos/queso parmesano.jpg" alt="Queso parmesano curado" class="producto-imagen">
+                    </div>
                     <p class="producto-descripcion">Queso Parmesano</p>
                     <p class="producto-precio">$2500</p>
-                </div>
-            </div>
-            <div class="productos-fila">
-                <div class="producto-item">
-                    <img src="../img/productos/pasta al pesto.jpg" alt="Pasta al pesto" class="producto-imagen">
-                    <p class="producto-descripcion">Pasta al Pesto</p>
-                    <p class="producto-precio">$1800</p>
-                </div>
-                <div class="producto-item">
-                    <img src="../img/productos/Salsa bolognesa.jpg" alt="Salsa bolognesa" class="producto-imagen">
-                    <p class="producto-descripcion">Salsa Bolognesa</p>
-                    <p class="producto-precio">$1200</p>
-                </div>
-                <div class="producto-item">
-                    <img src="../img/productos/mozarella.jpg" alt="Queso mozzarella" class="producto-imagen">
-                    <p class="producto-descripcion">Queso Mozarella</p>
-                    <p class="producto-precio">$3000</p>
-                </div>
-                <div class="producto-item">
-                    <img src="../img/productos/integral.jpg" alt="Pasta integral" class="producto-imagen">
-                    <p class="producto-descripcion">Pasta Integral</p>
-                    <p class="producto-precio">$2200</p>
-                </div>
-            </div>
+                </div> 
         </div>
     </section>    
 
     <footer class="footer">
         <div class="footer-item">© 2024 PAVI - Todos los derechos reservados</div>
         <div class="footer-item">Ciudad, Provincia, País</div>
-        <div class="footer-item">Tel: +54 x xxxxxxx</div>
+        <div class="footer-item">Tel: <a href="tel:+54xxxxxxxxxx">+54 xxxxxxxxx</a></div>
         <div class="footer-item footer-redes">
-            <span>Redes Sociales:</span>
-            <img src="../img/instagram.png" alt="Instagram" class="redes-icono">
-            <img src="../img/facebook.png" alt="Facebook" class="redes-icono">
-            <img src="../img/whatsapp.png" alt="WhatsApp" class="redes-icono">
+            <span>Síguenos en:</span>
+            <a href="https://instagram.com" target="_blank" rel="noopener"><img src="../img/instagram.png" alt="Instagram de PAVI" class="redes-icono"></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener"><img src="../img/facebook.png" alt="Facebook de PAVI" class="redes-icono"></a>
+            <a href="https://wa.me/+54xxxxxxxxx" target="_blank" rel="noopener"><img src="../img/whatsapp.png" alt="WhatsApp de PAVI" class="redes-icono"></a>
         </div>
     </footer>
+
 </body>
 </html>

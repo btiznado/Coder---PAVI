@@ -313,15 +313,26 @@ html, body {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
   height: 100%;
+  width: 100%;
+}
+
+.imagen-contenedor {
+  width: 100%;
+  max-width: 300px;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .imagen {
   width: 100%;
-  max-width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  background-color: #eaeaea;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
 }
 
 .texto-seccion-prod {

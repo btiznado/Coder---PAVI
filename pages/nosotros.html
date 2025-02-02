@@ -3,55 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAVI - Nosotros</title>
-    <!--<link rel="stylesheet" href="../css/style.css">-->
+    <title>Nosotros | PAVI - Pastas Caseras Artesanales</title>
+
+    <meta name="description" content="Descubre la historia de PAVI, un emprendimiento dedicado a la elaboración de pastas caseras con ingredientes frescos y naturales.">
+    <meta name="keywords" content="Nosotros, historia, pastas caseras, artesanales, ingredientes frescos, PAVI">
+    <meta name="author" content="PAVI">
+
+    <!-- redes sociales -->
+    <meta property="og:title" content="Nosotros | PAVI - Pastas Caseras Artesanales">
+    <meta property="og:description" content="Descubre la historia de PAVI, un emprendimiento dedicado a la elaboración de pastas caseras con ingredientes frescos y naturales.">
+    <meta property="og:image" content="../img/Nosotros/nosotors-cocina.jpg">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nosotros | PAVI - Pastas Caseras Artesanales">
+    <meta name="twitter:description" content="Descubre la historia de PAVI, un emprendimiento dedicado a la elaboración de pastas caseras con ingredientes frescos y naturales.">
+    <meta name="twitter:image" content="../img/Nosotros/nosotors-cocina.jpg">
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
-</head>
+
 <body>
 
     <header class="header">
         <div class="header__search">
-            <input type="text" placeholder="Buscar productos..." class="search-bar">
+            <input type="text" placeholder="Buscar productos..." class="search-bar" aria-label="Buscar productos">
         </div>
         <div class="header__logo">
-            <img src="../img/logo.png" alt="Logo del local" class="logo">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo">
+            </a>
         </div>
         <div class="header__icons">
-            <img src="../img/acceso.png" alt="Login" class="icon">
-            <img src="../img/carrito-de-compras.png" alt="Carrito" class="icon">
+            <a href="../login.html"><img src="../img/acceso.png" alt="Iniciar sesión" class="icon"></a>
+            <a href="../carrito.html"><img src="../img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon"></a>
         </div>
     </header>
 
     <nav class="nav-bar">
         <ul class="nav-menu">
-            <li><a href="../index.html" class="nav-link">Inicio</a></li>
-            <li><a href="./productos.html" class="nav-link">Productos</a></li>
-            <li><a href="./promos.html" class="nav-link">Promos</a></li>
-            <li><a href="./nosotros.html" class="nav-link">Nosotros</a></li>
-            <li><a href="./contactanos.html" class="nav-link">Contactanos</a></li>
+            <li><a href="../index.html" class="nav-link" aria-label="Inicio">Inicio</a></li>
+            <li><a href="./productos.html" class="nav-link" aria-label="Productos">Productos</a></li>
+            <li><a href="./promos.html" class="nav-link" aria-label="Promociones">Promos</a></li>
+            <li><a href="./nosotros.html" class="nav-link" aria-label="Nosotros">Nosotros</a></li>
+            <li><a href="./contactanos.html" class="nav-link" aria-label="Contáctanos">Contáctanos</a></li>
         </ul>
     </nav>
 
+    <!-- Sección Nosotros -->
     <section class="titulo-nosotros">
         <h1>Nosotros</h1>
-        <img src="../img/Nosotros/nosotors cocina.jpg" alt="Nosotros" class="nosotros-imagen">
+        <img src="../img/nosotros/nosotors cocina.jpg" alt="Equipo de PAVI preparando pastas caseras" class="nosotros-imagen">
+        
         <p class="nosotros-descripcion">
-            En PAVI nos especializamos en ofrecer las mejores pastas caseras, utilizando ingredientes frescos y naturales para
-            brindarte una experiencia única en cada bocado. Nuestra pasión por la comida se refleja en cada plato que preparamos.
-            ¡Estamos comprometidos con la calidad y el sabor!
+            En <strong>PAVI</strong> nos especializamos en ofrecer las mejores pastas caseras, elaboradas con ingredientes 
+            frescos y naturales para brindarte una experiencia única en cada bocado. Nuestra pasión por la comida 
+            se refleja en cada plato que preparamos. 
+        </p>
+
+        <p class="nosotros-descripcion">
+            Con más de <strong>10 años de experiencia</strong>, nos hemos convertido en un referente en la producción 
+            de <strong>pastas artesanales</strong>, salsas caseras y quesos seleccionados. Creemos en la tradición 
+            culinaria y en la importancia de un producto hecho con dedicación y amor.
+        </p>
+
+        <p class="nosotros-descripcion">
+            <strong>¿Por qué elegirnos?</strong> 
+            En PAVI nos enfocamos en ofrecer productos de alta calidad, sin conservantes ni aditivos artificiales. 
+            Nuestra misión es llevar a tu mesa el auténtico sabor de la pasta casera, como hecha en casa.
         </p>
     </section>
 
     <footer class="footer">
         <div class="footer-item">© 2024 PAVI - Todos los derechos reservados</div>
         <div class="footer-item">Ciudad, Provincia, País</div>
-        <div class="footer-item">Tel: +54 x xxxxxxx</div>
+        <div class="footer-item">Tel: <a href="tel:+54xxxxxxxxxx">+54 xxxxxxxxx</a></div>
         <div class="footer-item footer-redes">
-            <span>Redes Sociales:</span>
-            <img src="../img/instagram.png" alt="Instagram" class="redes-icono">
-            <img src="../img/facebook.png" alt="Facebook" class="redes-icono">
-            <img src="../img/whatsapp.png" alt="WhatsApp" class="redes-icono">
+            <span>Síguenos en:</span>
+            <a href="https://instagram.com" target="_blank" rel="noopener"><img src="../img/instagram.png" alt="Instagram de PAVI" class="redes-icono"></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener"><img src="../img/facebook.png" alt="Facebook de PAVI" class="redes-icono"></a>
+            <a href="https://wa.me/+54xxxxxxxxx" target="_blank" rel="noopener"><img src="../img/whatsapp.png" alt="WhatsApp de PAVI" class="redes-icono"></a>
         </div>
     </footer>
 
