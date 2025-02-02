@@ -1,4 +1,84 @@
 @media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .header__logo {
+        flex: 0;
+        margin-bottom: 10px;
+    }
+
+    .header__icons {
+        justify-content: center;
+        margin-top: 10px;
+        gap: 15px;
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .header__logo {
+        margin-bottom: 5px;
+    }
+
+    .header__icons {
+        gap: 10px;
+    }
+
+    .icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-bar {
+        padding: 10px 15px;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-inner {
+        height: 400px;
+    }
+
+    .carousel-item img {
+        object-fit: contain;
+        height: 100%;
+    }
+
+    .carousel-caption {
+        top: 60%;
+        min-width: 80%;
+    }
+
     .carousel-caption h5 {
         font-size: 24px;
         padding: 8px 16px;
@@ -6,8 +86,62 @@
 }
 
 @media (max-width: 480px) {
+    .carousel-inner {
+        height: 300px;
+    }
+
+    .carousel-item img {
+        object-fit: contain;
+        height: 100%;
+    }
+
+    .carousel-caption {
+        top: 65%;
+        min-width: 80%;
+    }
+
     .carousel-caption h5 {
         font-size: 18px;
-        padding: 5px 10px;
+        padding: 6px 12px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .footer-item {
+        text-align: center;
+        margin: 5px;
+    }
+
+    .footer-redes {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .redes-icono {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 10px;
+    }
+
+    .footer-item {
+        font-size: 12px;
+        margin: 3px;
+    }
+
+    .redes-icono {
+        width: 18px;
+        height: 18px;
     }
 }

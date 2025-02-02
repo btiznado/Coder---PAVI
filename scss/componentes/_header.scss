@@ -1,3 +1,12 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    position: relative; /* Permite que la nav-bar se posicione debajo */
+}
+
 .header__logo {
     flex: 1;
     text-align: center;

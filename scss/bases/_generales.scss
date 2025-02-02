@@ -1,12 +1,10 @@
-* {
-    margin: 0;
-    padding: 0;
+html,body {
+    margin: 0 !important;
+    padding: 0 !important;
     box-sizing: border-box;
-}
-
-body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: Arial, sans-serif;
+    margin-top: 80px;
 }
