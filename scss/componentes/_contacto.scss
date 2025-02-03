@@ -1,16 +1,16 @@
 .contacto-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    gap: 1.25rem;
+    padding: 1.875rem;
     background-color: #f9f9f9;
 }
 
 .contacto-titulo {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    padding: 30px;
+    gap: 1.875rem;
+    padding: 1.875rem;
     background-color: #fff;
 }
 
@@ -18,72 +18,72 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    padding: 20px;
+    padding: 1.25rem;
     background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .contacto-info h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
     color: #333;
 }
 
 .contacto-atencion {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
 }
 
 .contacto-atencion p {
-    margin-left: 10px;
-    font-size: 1em;
+    margin-left: 0.625rem;
+    font-size: 1rem;
     color: #555;
 }
 
 .contacto-icon {
-    width: 30px;
-    height: 30px;
+    width: 1.875rem;
+    height: 1.875rem;
 }
 
 .contacto-formulario {
-    padding: 20px;
+    padding: 1.25rem;
     background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0.625rem;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .contacto-formulario label {
-    font-size: 1.2em;
+    font-size: 1.125rem;
     display: block;
-    margin: 10px 0 5px;
+    margin: 0.625rem 0 0.3125rem;
     color: #333;
 }
 
 .contacto-formulario input,
 .contacto-formulario textarea {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    font-size: 1em;
+    padding: 0.625rem;
+    margin-bottom: 0.9375rem;
+    font-size: 1rem;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
 }
 
 .contacto-formulario textarea {
-    height: 100px;
+    height: 6.25rem;
     resize: none;
 }
 
 .contacto-formulario button.enviar-btn {
-    padding: 10px 20px;
-    font-size: 1.2em;
+    padding: 0.625rem 1.25rem;
+    font-size: 1.125rem;
     background-color: #333;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0.3125rem;
     transition: background-color 0.3s;
 }
 

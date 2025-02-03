@@ -1,3 +1,21 @@
+html, body {
+    height: 100%;  
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;  
+}
+
+body {
+    display: flex;
+    flex-direction: column;  
+    min-height: 100vh;  
+}
+
+
+.main-container {
+    flex-grow: 1; 
+}
+
 .footer {
     display: flex;
     flex-wrap: wrap;
@@ -7,10 +25,8 @@
     color: white;
     padding: 20px;
     font-size: 14px;
-    margin-top: auto;
     width: 100%;
 }
-
 .footer-item {
     flex: 1;
     text-align: center;

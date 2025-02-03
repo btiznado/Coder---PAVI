@@ -1,10 +1,28 @@
-html,body {
-    margin: 0 !important;
-    padding: 0 !important;
+html, body {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    margin-top: 80px;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+html {
+    font-size: 1rem;
+}
+
+h1 {
+    font-size: 3vw;
+}
+
+.container {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.carousel-inner {
+    height: 50vh !important;
 }
