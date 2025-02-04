@@ -1,8 +1,9 @@
 .promos-banner {
     position: relative;
     width: 100%;
-    height: 18.75rem;
+    height: 18.75vw; 
     background-color: #f0f0f0;
+    margin-bottom: 2rem;
 }
 
 .promos-image {
@@ -14,7 +15,8 @@
 .promos-title {
     position: absolute;
     top: 6.25rem;
-    left: 3.125rem;
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 3.125rem;
     color: rgb(255, 255, 255);
     font-weight: bold;
@@ -22,4 +24,76 @@
     background: rgba(0, 0, 0, 0.647);
     padding: 0.625rem 1.25rem;
     border-radius: 1.25rem;
+    text-align: center;
+}
+
+.promos-seccion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh; 
+    padding: 2rem 0;
+    box-sizing: border-box;
+    object-fit: cover;
+}
+
+.promo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 37.5rem; 
+    text-align: center;
+    transition: transform 0.3s ease; 
+}
+
+.promo-imagen-contenedor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+}
+
+.promo-imagen {
+    width: 100%;
+    max-width: 25rem; 
+    height: auto;
+    border-radius: 8px;
+}
+
+.promo-titulo {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.promo-descripcion {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 0;
+    text-align: center;
+}
+
+.promo-precio {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #c00;
+    text-align: center;
+}
+
+.promo-descuento {
+    text-decoration: line-through;
+    font-size: 1rem;
+    color: #888;
+    margin-left: 0.5rem;
 }

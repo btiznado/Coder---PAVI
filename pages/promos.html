@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="es"> 
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PAVI - Promociones Especiales</title> 
-    <meta name="description" content="Descubre las promociones y ofertas exclusivas en PAVI. Ahorra en productos de calidad como pastas, salsas y más."> <!-- Meta descripción -->
-    <meta name="keywords" content="promociones, ofertas, descuentos, pasta, salsas, PAVI, productos, comida artesanal"> 
-    <!--<link rel="stylesheet" href="../css/style.css">-->
-    <link rel="stylesheet" href="../css/estilos.css">
+    <title>PAVI - Promociones Especiales</title>
+    <meta name="description" content="Descubre las promociones y ofertas exclusivas en PAVI. Ahorra en productos de calidad como pastas, salsas y más.">
+    <meta name="keywords" content="promociones, ofertas, descuentos, pasta, salsas, PAVI, productos, comida artesanal">
+    <link rel="stylesheet" href="../css/estilos.css"> <!-- Aquí se incluye el archivo CSS compilado desde SCSS -->
 </head>
 <body>
     <header class="header">
@@ -15,11 +14,11 @@
             <input type="text" placeholder="Buscar productos..." class="search-bar">
         </div>
         <div class="header__logo">
-            <img src="../img/logo.png" alt="Logo de PAVI, tienda de productos artesanales" class="logo"> 
+            <img src="../img/logo.png" alt="Logo de PAVI" class="logo">
         </div>
         <div class="header__icons">
-            <img src="../img/acceso.png" alt="Acceder a la cuenta de usuario" class="icon"> 
-            <img src="../img/carrito-de-compras.png" alt="Ir al carrito de compras" class="icon"> 
+            <img src="../img/acceso.png" alt="Acceder" class="icon">
+            <img src="../img/carrito-de-compras.png" alt="Carrito" class="icon">
         </div>
     </header>
 
@@ -27,26 +26,51 @@
         <ul class="nav-menu">
             <li><a href="../index.html" class="nav-link">Inicio</a></li>
             <li><a href="./productos.html" class="nav-link">Productos</a></li>
-            <li><a href="./promos.html" class="nav-link activo">Promos</a></li> <!-- Título mejorado -->
+            <li><a href="./promos.html" class="nav-link activo">Promos</a></li>
             <li><a href="./nosotros.html" class="nav-link">Nosotros</a></li>
-            <li><a href="./contactanos.html" class="nav-link">Contáctanos</a></li> 
+            <li><a href="./contactanos.html" class="nav-link">Contáctanos</a></li>
         </ul>
     </nav>
+
     <div class="main-container">
         <section class="promos-banner">
-            <h1 class="promos-title">Promociones Especiales</h1> 
-            <img src="../img/banner/promos.jpg" alt="Banner de promociones en PAVI con descuentos en pastas y salsas" class="promos-image"> <!-- Descripción mejorada -->
+            <h1 class="promos-title">Promociones Especiales</h1>
+            <img src="../img/banner/promos.jpg" alt="Banner de promociones" class="promos-image">
+        </section>
+
+        <section class="promos-seccion">
+            <ul class="promos-lista">
+                <li class="promo-item">
+                    <img src="../img/Promos/pastafi.jpg" alt="Pasta Fina" class="promo-imagen">
+                    <h3>Pasta Fina - 20% OFF</h3>
+                    <p>Disfruta de nuestra pasta fina artesanal con un 20% de descuento.</p>
+                    <p class="promo-precio">$1500 <span class="promo-descuento">$1200</span></p>
+                </li>
+                <li class="promo-item">
+                    <img src="../img/Promos/pastahu.jpg" alt="Pasta de Huevo" class="promo-imagen">
+                    <h3>Pasta de Huevo - 15% OFF</h3>
+                    <p>La pasta de huevo, hecha a mano, con un 15% de descuento.</p>
+                    <p class="promo-precio">$2000 <span class="promo-descuento">$1700</span></p>
+                </li>
+                <li class="promo-item">
+                    <img src="../img/Promos/salsamari.jpeg" alt="Salsa Marinara" class="promo-imagen">
+                    <h3>Salsa Marinara - 10% OFF</h3>
+                    <p>Aprovecha el descuento del 10% en nuestra salsa marinara italiana.</p>
+                    <p class="promo-precio">$1000 <span class="promo-descuento">$900</span></p>
+                </li>
+            </ul>
         </section>
     </div>
+
     <footer class="footer">
         <div class="footer-item">© 2024 PAVI - Todos los derechos reservados</div>
         <div class="footer-item">Ciudad, Provincia, País</div>
         <div class="footer-item">Tel: +54 x xxxxxxx</div>
         <div class="footer-item footer-redes">
             <span>Redes Sociales:</span>
-            <a href="https://www.instagram.com" target="_blank" alt="Instagram de PAVI"><img src="../img/instagram.png" class="redes-icono"></a>
-            <a href="https://www.facebook.com" target="_blank" alt="Facebook de PAVI"><img src="../img/facebook.png" class="redes-icono"></a>
-            <a href="https://wa.me/xxxxxx" target="_blank" alt="WhatsApp de PAVI"><img src="../img/whatsapp.png" class="redes-icono"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="../img/instagram.png" class="redes-icono"></a>
+            <a href="https://www.facebook.com" target="_blank"><img src="../img/facebook.png" class="redes-icono"></a>
+            <a href="https://wa.me/xxxxxx" target="_blank"><img src="../img/whatsapp.png" class="redes-icono"></a>
         </div>
     </footer>
 </body>
