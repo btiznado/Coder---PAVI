@@ -1,9 +1,10 @@
 .carousel-inner {
     width: 100%;
-    height: 50vh;
+    height: 100%; /* Se ajusta al alto del main-container */
     overflow: hidden;
     z-index: 1000;
-    margin-top: 0.25rem;
+    margin-top: 0; /* Asegurarse de que no haya márgenes extra */
+    position: relative;
 }
 
 .carousel-item {
@@ -24,9 +25,9 @@
 
 .carousel-caption {
     position: absolute;
-    top: 60%;
+    top: 50%; /* Ajuste de la posición vertical */
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); /* Centrado exacto */
     padding: 0.625rem 1.25rem;
     text-align: center;
     width: auto;
