@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body {
   margin: 0;
   padding: 0;
@@ -8,10 +9,6 @@ html, body {
   font-family: Arial, sans-serif;
   font-size: 16px;
   overflow-x: hidden;
-}
-
-html {
-  font-size: 1rem;
 }
 
 h1 {
@@ -78,6 +75,7 @@ h1 {
   }
   .nav-bar {
     padding: 1rem;
+    height: 60px;
   }
   .nav-menu {
     flex-direction: column;
@@ -100,7 +98,7 @@ h1 {
     min-width: 80%;
   }
   .carousel-caption h5 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     padding: 0.5rem 1rem;
   }
   .footer {
@@ -119,6 +117,26 @@ h1 {
   .redes-icono {
     width: 1.25rem;
     height: 1.25rem;
+  }
+  .producto-item {
+    width: calc(50% - 1rem) !important;
+  }
+  .promos-banner {
+    height: 30vw;
+  }
+  .promos-title {
+    font-size: 2.5rem;
+    top: 5rem;
+  }
+  .promo-item {
+    width: 95%;
+    max-width: 90%;
+  }
+  .lista-secciones li {
+    flex: 1 1 calc(50% - 1rem) !important; /* 2 columnas */
+  }
+  .etiqueta {
+    text-align: center; /* Alineamos el texto al centro */
   }
 }
 @media (max-width: 480px) {
@@ -171,6 +189,33 @@ h1 {
     width: 1.125rem;
     height: 1.125rem;
   }
+  .producto-item {
+    width: 100% !important;
+  }
+  .productos-seccion {
+    padding: 1rem;
+  }
+  .productos-titulo h1 {
+    font-size: 1.5rem;
+  }
+  .productos-titulo p {
+    font-size: 0.9rem;
+  }
+  .promos-title {
+    font-size: 2rem;
+    top: 4rem;
+  }
+  .promo-item {
+    width: 100%;
+    max-width: 100%;
+  }
+  .lista-secciones li {
+    flex: 1 1 calc(50% - 1rem) !important; /* 2 columnas */
+  }
+  .etiqueta {
+    font-size: 0.9rem; /* Reducir el tamaño de la fuente */
+    text-align: center; /* Alineamos el texto al centro */
+  }
 }
 .header-container {
   position: relative;
@@ -216,6 +261,76 @@ h1 {
 
 body {
   padding-block-end: 5rem;
+}
+
+.navbar {
+  background-color: #727171 !important;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  border-bottom: 0.125rem solid #5a5a5a;
+}
+
+/* Estilos del botón hamburguesa */
+.navbar-toggler {
+  margin-left: auto;
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Asegurar que los elementos ocupen todo el ancho */
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-between; /* Distribuir a lo largo de la navbar */
+  align-items: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Cada ítem ocupa espacio equitativo */
+.nav-item {
+  flex: 1;
+  text-align: center; /* Alinear el texto al centro */
+}
+
+/* Estilos de los enlaces */
+.nav-item .nav-link {
+  text-decoration: none;
+  color: white !important;
+  font-size: 1.125rem;
+  padding: 0.625rem 1rem;
+  border-radius: 0.3125rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  display: block;
+  width: 100%; /* Hacer que ocupe todo el espacio del `nav-item` */
+}
+
+.nav-item .nav-link:hover {
+  color: #000000 !important;
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.nav-item .nav-link.active {
+  background-color: #5d5d5c !important;
+  color: #fff !important;
+  font-weight: bold;
+}
+
+/* Evitar diferencias en la navbar en index.html */
+body.index .navbar {
+  padding: 0.5rem 1rem !important;
+}
+
+body.index .carousel-inner {
+  height: 50vh !important;
 }
 
 html, body {
@@ -265,60 +380,13 @@ body {
   height: 24px;
 }
 
-.nav-bar {
-  background-color: #727171;
-  padding: 1rem 1.25rem;
-  width: 100%;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  border-bottom: 0.125rem solid #5a5a5a;
-}
-
-.nav-menu {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: white;
-  font-size: 1.125rem;
-  padding: 0.625rem 1rem;
-  border-radius: 0.3125rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-link:hover {
-  color: #000000;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.nav-link.activo {
-  background-color: #5d5d5c;
-  color: #fff;
-  font-weight: bold;
-}
-
-body.index .nav-bar {
-  padding: 0.1rem 1rem !important;
-}
-
-body.index .carousel-inner {
-  height: 50vh !important;
-}
-
 .carousel-inner {
   width: 100%;
-  height: 50vh;
+  height: 100%;
   overflow: hidden;
   z-index: 1000;
-  margin-top: 0.25rem;
+  margin-top: 0;
+  position: relative;
 }
 
 .carousel-item {
@@ -339,9 +407,9 @@ body.index .carousel-inner {
 
 .carousel-caption {
   position: absolute;
-  top: 60%;
+  top: 50%; /* Ajuste de la posición vertical */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Centrado exacto */
   padding: 0.625rem 1.25rem;
   text-align: center;
   width: auto;
@@ -365,112 +433,138 @@ body.index .carousel-inner {
   padding: 2.5rem;
   background-color: #f9f9f9;
   display: flex;
-  justify-content: flex-end;
-  gap: 3rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .productos-contenedor {
-  width: 60%;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-
-.productos-titulo {
+.productos-contenedor .productos-titulo {
   text-align: left;
   margin-bottom: 2rem;
 }
-.productos-titulo h1 {
+.productos-contenedor .productos-titulo h1 {
   font-size: 2rem;
   font-weight: bold;
   color: #333;
 }
-.productos-titulo p {
+.productos-contenedor .productos-titulo p {
   font-size: 1rem;
   color: #555;
 }
 
-.secciones-tienda {
-  margin-top: 3rem;
-}
-.secciones-tienda h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 1.5rem;
-}
-.secciones-tienda .lista-secciones {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-.secciones-tienda .lista-secciones li {
-  font-size: 1.125rem;
-  color: #333;
-  margin: 0.5rem 0;
-}
-.secciones-tienda .lista-secciones li a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s ease;
-}
-.secciones-tienda .lista-secciones li a:hover {
-  color: #0073e6;
-}
-
 .productos-venta {
-  width: 40%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 2rem;
+  justify-content: flex-start;
+  gap: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
 }
-
-.producto-item {
+.productos-venta .producto-categoria {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.productos-venta .producto-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 70%;
-  background-color: #fff;
+  justify-content: space-between;
+  width: calc(33.33% - 1.5rem); /* 3 productos por fila en escritorio */
   padding: 1rem;
   border-radius: 0.625rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-bottom: 0.625rem;
+  background: white;
+  max-height: 500px;
 }
-.producto-item:hover {
+.productos-venta .producto-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
-.producto-item .imagen-contenedor {
+.productos-venta .producto-item .imagen-contenedor {
   width: 100%;
-  height: 20rem;
-  margin-bottom: 2rem;
+  height: 200px;
   overflow: hidden;
   background-color: #eaeaea;
   border-radius: 0.625rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
-.producto-item .producto-imagen {
+.productos-venta .producto-item .imagen-contenedor .producto-imagen {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
-.producto-item .producto-descripcion {
+.productos-venta .producto-item .producto-descripcion {
   font-size: 1.125rem;
   color: #333;
   margin: 0.5rem 0;
+  min-height: 50px;
 }
-.producto-item .producto-precio {
+.productos-venta .producto-item .producto-precio {
   font-size: 1rem;
   color: #555;
+  margin-top: auto;
+}
+
+.secciones-tienda {
+  margin-bottom: 2rem;
+}
+
+.lista-secciones {
+  list-style: none; /* Elimina los puntos de la lista */
+  padding: 0;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap; /* Permite que las etiquetas pasen a la siguiente fila */
+  gap: 1rem;
+  justify-content: flex-start; /* Alinea los elementos a la izquierda */
+}
+
+.lista-secciones li {
+  display: inline-block;
+  flex: 1 1 calc(33.33% - 1rem); /* Por defecto, 3 columnas en escritorio */
+}
+
+/* Diseño de las etiquetas */
+.etiqueta {
+  background-color: #f1f1f1;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  color: #333;
+  text-decoration: none; /* Elimina subrayado de los enlaces */
+  display: block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.etiqueta:hover {
+  background-color: #ddd;
+}
+
+.etiqueta:active {
+  background-color: #ccc;
 }
 
 .promos-banner {
   position: relative;
   width: 100%;
-  height: 18.75rem;
+  height: 18.75vw;
   background-color: #f0f0f0;
+  margin-bottom: 2rem;
 }
 
 .promos-image {
@@ -482,7 +576,8 @@ body.index .carousel-inner {
 .promos-title {
   position: absolute;
   top: 6.25rem;
-  left: 3.125rem;
+  left: 50%;
+  transform: translateX(-50%);
   font-size: 3.125rem;
   color: rgb(255, 255, 255);
   font-weight: bold;
@@ -490,6 +585,78 @@ body.index .carousel-inner {
   background: rgba(0, 0, 0, 0.647);
   padding: 0.625rem 1.25rem;
   border-radius: 1.25rem;
+  text-align: center;
+}
+
+.promos-seccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0;
+  box-sizing: border-box;
+  object-fit: cover;
+}
+
+.promo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 37.5rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.promo-imagen-contenedor {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.promo-imagen {
+  width: 100%;
+  max-width: 25rem;
+  height: auto;
+  border-radius: 8px;
+}
+
+.promo-titulo {
+  font-size: 1.5rem;
+  color: #333;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.promo-descripcion {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+.promo-precio {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #c00;
+  text-align: center;
+}
+
+.promo-descuento {
+  text-decoration: line-through;
+  font-size: 1rem;
+  color: #888;
+  margin-left: 0.5rem;
 }
 
 .titulo-nosotros {

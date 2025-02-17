@@ -19,9 +19,7 @@
     <meta name="twitter:title" content="Contáctanos | PAVI - Pastas Caseras">
     <meta name="twitter:description" content="Ponte en contacto con PAVI para realizar pedidos o consultas sobre nuestras pastas caseras, salsas y quesos artesanales.">
     <meta name="twitter:image" content="../img/banner/banner-1.jpg">
-
-    <!-- Estilos -->
-    <!--<link rel="stylesheet" href="../css/style.css">-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
@@ -41,14 +39,30 @@
         </div>
     </header>
 
-    <nav class="nav-bar">
-        <ul class="nav-menu">
-            <li><a href="../index.html" class="nav-link" aria-label="Inicio">Inicio</a></li>
-            <li><a href="./productos.html" class="nav-link" aria-label="Productos">Productos</a></li>
-            <li><a href="./promos.html" class="nav-link" aria-label="Promociones">Promos</a></li>
-            <li><a href="./nosotros.html" class="nav-link" aria-label="Nosotros">Nosotros</a></li>
-            <li><a href="./contactanos.html" class="nav-link activo" aria-label="Contáctanos">Contáctanos</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./productos.html">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./promos.html">Promos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./nosotros.html">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./contactanos.html">Contáctanos</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     <!-- Sección de Contacto -->
@@ -102,5 +116,6 @@
             <a href="https://wa.me/+54xxxxxxxxx" target="_blank" rel="noopener"><img src="../img/whatsapp.png" alt="WhatsApp de PAVI" class="redes-icono"></a>
         </div>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,83 +1,145 @@
+// Variables
+$color-primario: #333;
+$color-secundario: #555;
+$color-fondo: #f9f9f9;
+$color-hover: rgba(0, 0, 0, 0.2);
+
 .productos-seccion {
     padding: 2.5rem;
-    background-color: #f9f9f9;
+    background-color: $color-fondo;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .productos-contenedor {
     width: 100%;
-}
+    max-width: 1200px;
+    margin: 0 auto;
 
-.productos-titulo {
-    text-align: left;
-    margin-bottom: 2rem;
+    .productos-titulo {
+        text-align: left;
+        margin-bottom: 2rem;
 
-    h1 {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #333;
-    }
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: $color-primario;
+        }
 
-    p {
-        font-size: 1rem;
-        color: #555;
+        p {
+            font-size: 1rem;
+            color: $color-secundario;
+        }
     }
 }
 
 .productos-venta {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 1.5rem;
     width: 100%;
-    gap: 2rem;  
+    box-sizing: border-box;
+
+    .producto-categoria {
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .producto-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: calc(33.33% - 1.5rem); /* 3 productos por fila en escritorio */
+        padding: 1rem;
+        border-radius: 0.625rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background: white;
+        max-height: 500px;
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px $color-hover;
+        }
+
+        .imagen-contenedor {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            background-color: #eaeaea;
+            border-radius: 0.625rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            .producto-imagen {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        .producto-descripcion {
+            font-size: 1.125rem;
+            color: $color-primario;
+            margin: 0.5rem 0;
+            min-height: 50px;
+        }
+
+        .producto-precio {
+            font-size: 1rem;
+            color: $color-secundario;
+            margin-top: auto;
+        }
+    }
 }
 
-.producto-item {
+.secciones-tienda {
+    margin-bottom: 2rem;
+}
+
+.lista-secciones {
+    list-style: none; /* Elimina los puntos de la lista */
+    padding: 0;
+    margin-top: 1rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: calc(33.33% - 1.5rem);  
-    padding: 1rem;
-    border-radius: 0.625rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap; /* Permite que las etiquetas pasen a la siguiente fila */
+    gap: 1rem;
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+}
+
+.lista-secciones li {
+    display: inline-block;
+    flex: 1 1 calc(33.33% - 1rem); /* Por defecto, 3 columnas en escritorio */
+}
+
+/* Diseño de las etiquetas */
+.etiqueta {
+    background-color: #f1f1f1;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    color: #333;
+    text-decoration: none; /* Elimina subrayado de los enlaces */
+    display: block;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-bottom: 0.625rem;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
 
-    &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-    }
+.etiqueta:hover {
+    background-color: #ddd;
+}
 
-    .imagen-contenedor {
-        width: 100%;
-        height: 20rem;
-        margin-bottom: 2rem;
-        overflow: hidden;
-        background-color: #eaeaea;
-        border-radius: 0.625rem;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .producto-imagen {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;  
-    }
-
-    .producto-descripcion {
-        font-size: 1.125rem;
-        color: #333;
-        margin: 0.5rem 0;
-    }
-
-    .producto-precio {
-        font-size: 1rem;
-        color: #555;
-    }
+.etiqueta:active {
+    background-color: #ccc;
 }
