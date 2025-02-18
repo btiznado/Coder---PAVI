@@ -55,7 +55,7 @@ $color-hover: rgba(0, 0, 0, 0.2);
         flex-direction: column;
         align-items: center;
         justify-content: space-between;
-        width: calc(33.33% - 1.5rem); /* 3 productos por fila en escritorio */
+        width: calc(33.33% - 1.5rem); 
         padding: 1rem;
         border-radius: 0.625rem;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -108,28 +108,27 @@ $color-hover: rgba(0, 0, 0, 0.2);
 }
 
 .lista-secciones {
-    list-style: none; /* Elimina los puntos de la lista */
+    list-style: none; 
     padding: 0;
     margin-top: 1rem;
     display: flex;
-    flex-wrap: wrap; /* Permite que las etiquetas pasen a la siguiente fila */
+    flex-wrap: wrap; 
     gap: 1rem;
-    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+    justify-content: flex-start; 
 }
 
 .lista-secciones li {
     display: inline-block;
-    flex: 1 1 calc(33.33% - 1rem); /* Por defecto, 3 columnas en escritorio */
+    flex: 1 1 calc(33.33% - 1rem); 
 }
 
-/* Diseño de las etiquetas */
 .etiqueta {
     background-color: #f1f1f1;
     padding: 0.5rem 1rem;
     border-radius: 1.5rem;
     font-size: 1rem;
     color: #333;
-    text-decoration: none; /* Elimina subrayado de los enlaces */
+    text-decoration: none;
     display: block;
     text-align: center;
     transition: background-color 0.3s ease;

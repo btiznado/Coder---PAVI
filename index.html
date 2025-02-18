@@ -25,16 +25,18 @@
 </head>
 
 <body class="index">
-    <header class="header">
+    <header class="header d-flex justify-content-between align-items-center">
         <div class="header__search">
             <input type="text" placeholder="Buscar productos..." class="search-bar" aria-label="Buscar productos">
         </div>
-        <div class="header__logo">
-            <img src="./img/logo.png" alt="Logo de PAVI - Pastas Caseras" class="logo">
+        <div class="header__logo mx-auto">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo">
+            </a>
         </div>
         <div class="header__icons">
-            <a href="./login.html"><img src="./img/acceso.png" alt="Iniciar sesión" class="icon"></a>
-            <a href="./carrito.html"><img src="./img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon"></a>
+            <a href="../login.html"><img src="../img/acceso.png" alt="Iniciar sesión" class="icon"></a>
+            <a href="../carrito.html"><img src="../img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon"></a>
         </div>
     </header>
 
@@ -90,6 +92,40 @@
             </div>
         </section>
     </div>
+
+    <section class="productos-destacados">
+        <h2 class="productos-destacados-titulo">Productos Destacados</h2>
+        <div class="productos-destacados-imagenes">
+            <div class="producto-destacado-item">
+                <img src="./img/productos/pasta fina.jpg" alt="Pasta Fina" class="producto-imagen">
+            </div>
+            <div class="producto-destacado-item">
+                <img src="./img/productos/pasta de huevo.jpg" alt="Pasta de Huevo" class="producto-imagen">
+            </div>
+            <div class="producto-destacado-item">
+                <img src="./img/productos/salsa marinara.jpg" alt="Salsa Marinara" class="producto-imagen">
+            </div>
+        </div>
+        <div class="ver-todos">
+            <a href="./pages/productos.html" class="btn btn-primary">Ver todos los productos</a>
+        </div>
+    </section>
+    
+    <section class="informacion-adicional">
+        <div class="informacion-item">
+            <img src="./img/seccion index/camion.png" alt="Envío gratis a Bahía Blanca" class="informacion-imagen">
+            <p>Envío gratis a Bahía Blanca. Monto mínimo de compra $25000</p>
+        </div>
+        <div class="informacion-item">
+            <img src="./img/seccion index/tarjeta-de-debito.png" alt="Pagá como quieras" class="informacion-imagen">
+            <p>Pagá como quieras. Tarjetas de crédito o efectivo</p>
+        </div>
+        <div class="informacion-item">
+            <img src="./img/seccion index/bloquear.png" alt="Compra segura" class="informacion-imagen">
+            <p>Comprá con seguridad. Tus datos siempre protegidos</p>
+        </div>
+    </section>
+    
 
     <footer class="footer">
         <div class="footer-item">© 2024 PAVI - Todos los derechos reservados</div>

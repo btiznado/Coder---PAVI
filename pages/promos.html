@@ -10,16 +10,18 @@
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
-    <header class="header">
+    <header class="header d-flex justify-content-between align-items-center">
         <div class="header__search">
-            <input type="text" placeholder="Buscar productos..." class="search-bar">
+            <input type="text" placeholder="Buscar productos..." class="search-bar" aria-label="Buscar productos">
         </div>
-        <div class="header__logo">
-            <img src="../img/logo.png" alt="Logo de PAVI" class="logo">
+        <div class="header__logo mx-auto">
+            <a href="../index.html">
+                <img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo">
+            </a>
         </div>
         <div class="header__icons">
-            <img src="../img/acceso.png" alt="Acceder" class="icon">
-            <img src="../img/carrito-de-compras.png" alt="Carrito" class="icon">
+            <a href="../login.html"><img src="../img/acceso.png" alt="Iniciar sesión" class="icon"></a>
+            <a href="../carrito.html"><img src="../img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon"></a>
         </div>
     </header>
 
@@ -49,47 +51,46 @@
         </div>
     </nav>
 
-    <div class="main-container">
+    <main class="main-container">
         <section class="promos-banner">
             <h1 class="promos-title">Promociones Especiales</h1>
             <img src="../img/banner/promos.jpg" alt="Banner de promociones" class="promos-image">
         </section>
-
+    
         <section class="promos-seccion">
-            <ul class="promos-lista">
-                <li class="promo-item">
-                    <img src="../img/Promos/pastafi.jpg" alt="Pasta Fina" class="promo-imagen">
-                    <h3>Pasta Fina - 20% OFF</h3>
-                    <p>Disfruta de nuestra pasta fina artesanal con un 20% de descuento.</p>
-                    <p class="promo-precio">$1500 <span class="promo-descuento">$1200</span></p>
-                </li>
-                <li class="promo-item">
-                    <img src="../img/Promos/pastahu.jpg" alt="Pasta de Huevo" class="promo-imagen">
-                    <h3>Pasta de Huevo - 15% OFF</h3>
-                    <p>La pasta de huevo, hecha a mano, con un 15% de descuento.</p>
-                    <p class="promo-precio">$2000 <span class="promo-descuento">$1700</span></p>
-                </li>
-                <li class="promo-item">
-                    <img src="../img/Promos/salsamari.jpeg" alt="Salsa Marinara" class="promo-imagen">
-                    <h3>Salsa Marinara - 10% OFF</h3>
-                    <p>Aprovecha el descuento del 10% en nuestra salsa marinara italiana.</p>
-                    <p class="promo-precio">$1000 <span class="promo-descuento">$900</span></p>
-                </li>
-            </ul>
+            <div class="promo-item">
+                <img src="../img/Promos/pastafi.jpg" alt="Pasta Fina" class="promo-imagen">
+                <h3>Pasta Fina - 20% OFF</h3>
+                <p>Disfruta de nuestra pasta fina artesanal con un 20% de descuento.</p>
+                <p class="promo-precio">$1500 <span class="promo-descuento">$1200</span></p>
+            </div>
+            <div class="promo-item">
+                <img src="../img/Promos/pastahu.jpg" alt="Pasta de Huevo" class="promo-imagen">
+                <h3>Pasta de Huevo - 15% OFF</h3>
+                <p>La pasta de huevo, hecha a mano, con un 15% de descuento.</p>
+                <p class="promo-precio">$2000 <span class="promo-descuento">$1700</span></p>
+            </div>
+            <div class="promo-item">
+                <img src="../img/Promos/salsamari.jpeg" alt="Salsa Marinara" class="promo-imagen">
+                <h3>Salsa Marinara - 10% OFF</h3>
+                <p>Aprovecha el descuento del 10% en nuestra salsa marinara italiana.</p>
+                <p class="promo-precio">$1000 <span class="promo-descuento">$900</span></p>
+            </div>
         </section>
-    </div>
-
+    </main>
+    
     <footer class="footer">
-        <div class="footer-item">© 2024 PAVI - Todos los derechos reservados</div>
-        <div class="footer-item">Ciudad, Provincia, País</div>
-        <div class="footer-item">Tel: +54 x xxxxxxx</div>
-        <div class="footer-item footer-redes">
+        <div>© 2024 PAVI - Todos los derechos reservados</div>
+        <div>Ciudad, Provincia, País</div>
+        <div>Tel: +54 x xxxxxxx</div>
+        <div class="footer-redes">
             <span>Redes Sociales:</span>
             <a href="https://www.instagram.com" target="_blank"><img src="../img/instagram.png" class="redes-icono"></a>
             <a href="https://www.facebook.com" target="_blank"><img src="../img/facebook.png" class="redes-icono"></a>
             <a href="https://wa.me/xxxxxx" target="_blank"><img src="../img/whatsapp.png" class="redes-icono"></a>
         </div>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

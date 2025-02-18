@@ -1,82 +1,47 @@
 .contacto-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
     padding: 1.875rem;
     background-color: #f9f9f9;
+    min-height: calc(100vh - 200px);
+
 }
 
-.contacto-titulo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.875rem;
-    padding: 1.875rem;
-    background-color: #fff;
-}
-
-.contacto-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.contacto-info, .contacto-formulario {
     padding: 1.25rem;
-    background-color: #f9f9f9;
+    background-color: #fff;
     border-radius: 0.625rem;
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
-.contacto-info h2 {
-    font-size: 1.125rem;
-    margin-bottom: 1.25rem;
+.contacto-info h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
     color: #333;
 }
 
 .contacto-atencion {
     display: flex;
     align-items: center;
-    margin-bottom: 1.25rem;
-}
-
-.contacto-atencion p {
-    margin-left: 0.625rem;
-    font-size: 1rem;
-    color: #555;
+    margin-bottom: 1rem;
 }
 
 .contacto-icon {
     width: 1.875rem;
     height: 1.875rem;
+    margin-right: 0.625rem;
 }
 
-.contacto-formulario {
-    padding: 1.25rem;
-    background-color: #f9f9f9;
-    border-radius: 0.625rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-}
-
-.contacto-formulario label {
-    font-size: 1.125rem;
-    display: block;
-    margin: 0.625rem 0 0.3125rem;
-    color: #333;
-}
-
-.contacto-formulario input,
+.contacto-formulario input, 
 .contacto-formulario textarea {
     width: 100%;
     padding: 0.625rem;
-    margin-bottom: 0.9375rem;
-    font-size: 1rem;
     border: 1px solid #ddd;
     border-radius: 0.3125rem;
 }
 
-.contacto-formulario textarea {
-    height: 6.25rem;
-    resize: none;
-}
-
-.contacto-formulario button.enviar-btn {
+.enviar-btn {
     padding: 0.625rem 1.25rem;
     font-size: 1.125rem;
     background-color: #333;
@@ -85,8 +50,8 @@
     cursor: pointer;
     border-radius: 0.3125rem;
     transition: background-color 0.3s;
-}
 
-.contacto-formulario button.enviar-btn:hover {
-    background-color: #555;
+    &:hover {
+        background-color: #555;
+    }
 }

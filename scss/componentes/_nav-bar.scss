@@ -9,7 +9,6 @@
     border-bottom: 0.125rem solid #5a5a5a;
 }
 
-/* Estilos del botón hamburguesa */
 .navbar-toggler {
     margin-left: auto;
     border: none;
@@ -19,24 +18,21 @@
     box-shadow: none;
 }
 
-/* Asegurar que los elementos ocupen todo el ancho */
 .navbar-nav {
     list-style: none;
     display: flex;
-    justify-content: space-between;  /* Distribuir a lo largo de la navbar */
+    justify-content: space-between; 
     align-items: center;
     width: 100%;
     padding: 0;
     margin: 0;
 }
 
-/* Cada ítem ocupa espacio equitativo */
 .nav-item {
     flex: 1;
-    text-align: center; /* Alinear el texto al centro */
+    text-align: center; 
 }
 
-/* Estilos de los enlaces */
 .nav-item .nav-link {
     text-decoration: none;
     color: white !important;
@@ -45,7 +41,7 @@
     border-radius: 0.3125rem;
     transition: background-color 0.3s ease, color 0.3s ease;
     display: block;
-    width: 100%;  /* Hacer que ocupe todo el espacio del `nav-item` */
+    width: 100%;  
 }
 
 .nav-item .nav-link:hover {
@@ -59,7 +55,7 @@
     font-weight: bold;
 }
 
-/* Evitar diferencias en la navbar en index.html */
+
 body.index .navbar {
     padding: 0.5rem 1rem !important;
 }

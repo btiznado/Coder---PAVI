@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html, body {
   margin: 0;
   padding: 0;
@@ -22,6 +21,77 @@ h1 {
 
 .carousel-inner {
   height: 50vh !important;
+}
+
+.productos-destacados {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.productos-destacados-titulo {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.productos-destacados-imagenes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.producto-destacado-item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.producto-imagen {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.ver-todos {
+  margin-top: 1.5rem;
+}
+
+.ver-todos .btn {
+  background-color: #5d5d5c;
+  color: white;
+}
+
+.informacion-adicional {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  padding: 2rem;
+  background-color: #f0f0f0;
+  align-items: center;
+}
+
+.informacion-item {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.informacion-imagen {
+  width: 50px;
+  height: 50px;
+  margin-right: 1rem;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.informacion-texto {
+  text-align: left;
+  font-size: 1rem;
+  color: #333;
 }
 
 .header {
@@ -122,21 +192,44 @@ h1 {
     width: calc(50% - 1rem) !important;
   }
   .promos-banner {
-    height: 30vw;
+    height: 50vw;
   }
   .promos-title {
-    font-size: 2.5rem;
-    top: 5rem;
+    font-size: 2rem;
+    top: 4rem;
+    padding: 0.5rem 1rem;
+  }
+  .promos-seccion {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 1rem 0;
   }
   .promo-item {
-    width: 95%;
-    max-width: 90%;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .promo-imagen {
+    max-width: 100%;
   }
   .lista-secciones li {
-    flex: 1 1 calc(50% - 1rem) !important; /* 2 columnas */
+    flex: 1 1 calc(50% - 1rem) !important;
   }
   .etiqueta {
-    text-align: center; /* Alineamos el texto al centro */
+    text-align: center;
+  }
+  .contacto-container {
+    display: flex !important;
+    flex-direction: column;
+    min-height: calc(100vh - 150px);
+    margin-bottom: 2rem;
+  }
+  .contacto-formulario {
+    margin-bottom: 3rem;
+  }
+  .productos-destacados-imagenes {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .informacion-adicional {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 @media (max-width: 480px) {
@@ -201,20 +294,37 @@ h1 {
   .productos-titulo p {
     font-size: 0.9rem;
   }
+  .promos-banner {
+    height: 60vw;
+  }
   .promos-title {
-    font-size: 2rem;
-    top: 4rem;
+    font-size: 1.5rem;
+    top: 3rem;
+    padding: 0.5rem 1rem;
+  }
+  .promos-seccion {
+    grid-template-columns: 1fr !important;
+    padding: 0.5rem 0;
   }
   .promo-item {
     width: 100%;
+    margin-bottom: 1rem;
+  }
+  .promo-imagen {
     max-width: 100%;
   }
   .lista-secciones li {
-    flex: 1 1 calc(50% - 1rem) !important; /* 2 columnas */
+    flex: 1 1 calc(50% - 1rem) !important;
   }
   .etiqueta {
-    font-size: 0.9rem; /* Reducir el tamaño de la fuente */
-    text-align: center; /* Alineamos el texto al centro */
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  .productos-destacados-imagenes {
+    grid-template-columns: 1fr !important;
+  }
+  .informacion-adicional {
+    grid-template-columns: 1fr !important;
   }
 }
 .header-container {
@@ -274,7 +384,6 @@ body {
   border-bottom: 0.125rem solid #5a5a5a;
 }
 
-/* Estilos del botón hamburguesa */
 .navbar-toggler {
   margin-left: auto;
   border: none;
@@ -284,24 +393,21 @@ body {
   box-shadow: none;
 }
 
-/* Asegurar que los elementos ocupen todo el ancho */
 .navbar-nav {
   list-style: none;
   display: flex;
-  justify-content: space-between; /* Distribuir a lo largo de la navbar */
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 0;
   margin: 0;
 }
 
-/* Cada ítem ocupa espacio equitativo */
 .nav-item {
   flex: 1;
-  text-align: center; /* Alinear el texto al centro */
+  text-align: center;
 }
 
-/* Estilos de los enlaces */
 .nav-item .nav-link {
   text-decoration: none;
   color: white !important;
@@ -310,7 +416,7 @@ body {
   border-radius: 0.3125rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   display: block;
-  width: 100%; /* Hacer que ocupe todo el espacio del `nav-item` */
+  width: 100%;
 }
 
 .nav-item .nav-link:hover {
@@ -324,7 +430,6 @@ body {
   font-weight: bold;
 }
 
-/* Evitar diferencias en la navbar en index.html */
 body.index .navbar {
   padding: 0.5rem 1rem !important;
 }
@@ -407,9 +512,9 @@ body {
 
 .carousel-caption {
   position: absolute;
-  top: 50%; /* Ajuste de la posición vertical */
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centrado exacto */
+  transform: translate(-50%, -50%);
   padding: 0.625rem 1.25rem;
   text-align: center;
   width: auto;
@@ -476,7 +581,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: calc(33.33% - 1.5rem); /* 3 productos por fila en escritorio */
+  width: calc(33.33% - 1.5rem);
   padding: 1rem;
   border-radius: 0.625rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -523,28 +628,27 @@ body {
 }
 
 .lista-secciones {
-  list-style: none; /* Elimina los puntos de la lista */
+  list-style: none;
   padding: 0;
   margin-top: 1rem;
   display: flex;
-  flex-wrap: wrap; /* Permite que las etiquetas pasen a la siguiente fila */
+  flex-wrap: wrap;
   gap: 1rem;
-  justify-content: flex-start; /* Alinea los elementos a la izquierda */
+  justify-content: flex-start;
 }
 
 .lista-secciones li {
   display: inline-block;
-  flex: 1 1 calc(33.33% - 1rem); /* Por defecto, 3 columnas en escritorio */
+  flex: 1 1 calc(33.33% - 1rem);
 }
 
-/* Diseño de las etiquetas */
 .etiqueta {
   background-color: #f1f1f1;
   padding: 0.5rem 1rem;
   border-radius: 1.5rem;
   font-size: 1rem;
   color: #333;
-  text-decoration: none; /* Elimina subrayado de los enlaces */
+  text-decoration: none;
   display: block;
   text-align: center;
   transition: background-color 0.3s ease;
@@ -562,12 +666,15 @@ body {
 .promos-banner {
   position: relative;
   width: 100%;
-  height: 18.75vw;
+  min-height: 25rem;
   background-color: #f0f0f0;
-  margin-bottom: 2rem;
+  margin-bottom: 5px;
 }
 
 .promos-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -575,9 +682,9 @@ body {
 
 .promos-title {
   position: absolute;
-  top: 6.25rem;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   font-size: 3.125rem;
   color: rgb(255, 255, 255);
   font-weight: bold;
@@ -589,44 +696,43 @@ body {
 }
 
 .promos-seccion {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   padding: 2rem 0;
   box-sizing: border-box;
-  object-fit: cover;
+  width: 100%;
+  min-height: 50vh;
 }
 
 .promo-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background: #f9f9f9;
   padding: 1.5rem;
-  margin-bottom: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 37.5rem;
   text-align: center;
   transition: transform 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .promo-imagen-contenedor {
-  width: 100%;
+  width: 50% !important;
   display: flex;
   justify-content: center;
   background: #fff;
   padding: 1rem;
   border-radius: 8px;
+  height: auto;
+  max-height: 100px !important;
+  overflow: hidden;
 }
 
 .promo-imagen {
   width: 100%;
-  max-width: 25rem;
   height: auto;
   border-radius: 8px;
 }
@@ -635,21 +741,18 @@ body {
   font-size: 1.5rem;
   color: #333;
   margin-top: 1rem;
-  text-align: center;
 }
 
 .promo-descripcion {
   font-size: 1rem;
   color: #666;
   margin: 0.5rem 0;
-  text-align: center;
 }
 
 .promo-precio {
   font-size: 1.25rem;
   font-weight: bold;
   color: #c00;
-  text-align: center;
 }
 
 .promo-descuento {
@@ -688,83 +791,47 @@ body {
 
 .contacto-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 1.25rem;
   padding: 1.875rem;
   background-color: #f9f9f9;
+  min-height: calc(100vh - 200px);
 }
 
-.contacto-titulo {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.875rem;
-  padding: 1.875rem;
-  background-color: #fff;
-}
-
-.contacto-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.contacto-info, .contacto-formulario {
   padding: 1.25rem;
-  background-color: #f9f9f9;
+  background-color: #fff;
   border-radius: 0.625rem;
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
-.contacto-info h2 {
-  font-size: 1.125rem;
-  margin-bottom: 1.25rem;
+.contacto-info h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
   color: #333;
 }
 
 .contacto-atencion {
   display: flex;
   align-items: center;
-  margin-bottom: 1.25rem;
-}
-
-.contacto-atencion p {
-  margin-left: 0.625rem;
-  font-size: 1rem;
-  color: #555;
+  margin-bottom: 1rem;
 }
 
 .contacto-icon {
   width: 1.875rem;
   height: 1.875rem;
-}
-
-.contacto-formulario {
-  padding: 1.25rem;
-  background-color: #f9f9f9;
-  border-radius: 0.625rem;
-  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-}
-
-.contacto-formulario label {
-  font-size: 1.125rem;
-  display: block;
-  margin: 0.625rem 0 0.3125rem;
-  color: #333;
+  margin-right: 0.625rem;
 }
 
 .contacto-formulario input,
 .contacto-formulario textarea {
   width: 100%;
   padding: 0.625rem;
-  margin-bottom: 0.9375rem;
-  font-size: 1rem;
   border: 1px solid #ddd;
   border-radius: 0.3125rem;
 }
 
-.contacto-formulario textarea {
-  height: 6.25rem;
-  resize: none;
-}
-
-.contacto-formulario button.enviar-btn {
+.enviar-btn {
   padding: 0.625rem 1.25rem;
   font-size: 1.125rem;
   background-color: #333;
@@ -774,8 +841,7 @@ body {
   border-radius: 0.3125rem;
   transition: background-color 0.3s;
 }
-
-.contacto-formulario button.enviar-btn:hover {
+.enviar-btn:hover {
   background-color: #555;
 }
 

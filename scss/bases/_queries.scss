@@ -91,23 +91,55 @@
     }
     
     .promos-banner {
-        height: 30vw;
+        height: 50vw;
     }
+    
     .promos-title {
-        font-size: 2.5rem;
-        top: 5rem;
+        font-size: 2rem;
+        top: 4rem;
+        padding: 0.5rem 1rem;
     }
+
+    .promos-seccion {
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 1rem 0;
+    }
+
     .promo-item {
-        width: 95%;
-        max-width: 90%;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .promo-imagen {
+        max-width: 100%;
     }
     .lista-secciones li {
-        flex: 1 1 calc(50% - 1rem) !important; /* 2 columnas */
+        flex: 1 1 calc(50% - 1rem) !important;
     }
 
     .etiqueta {
-        text-align: center; /* Alineamos el texto al centro */
+        text-align: center;
     }
+
+    .contacto-container {
+        display: flex !important;
+        flex-direction: column;
+        min-height: calc(100vh - 150px);
+        margin-bottom: 2rem; 
+    }
+
+    .contacto-formulario {
+        margin-bottom: 3rem;
+    }
+
+    .productos-destacados-imagenes {
+        grid-template-columns: repeat(2, 1fr) !important; 
+    }
+
+    .informacion-adicional {
+        grid-template-columns: repeat(2, 1fr) !important; 
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -190,20 +222,43 @@
     .productos-titulo p {
         font-size: 0.9rem;  
     }
-    .promos-title {
-        font-size: 2rem;
-        top: 4rem;
+    .promos-banner {
+        height: 60vw;
     }
+    
+    .promos-title {
+        font-size: 1.5rem;
+        top: 3rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .promos-seccion {
+        grid-template-columns: 1fr !important;
+        padding: 0.5rem 0;
+    }
+
     .promo-item {
         width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .promo-imagen {
         max-width: 100%;
     }
     .lista-secciones li {
-        flex: 1 1 calc(50% - 1rem) !important; /* 2 columnas */
+        flex: 1 1 calc(50% - 1rem) !important;
     }
 
     .etiqueta {
-        font-size: 0.9rem; /* Reducir el tamaño de la fuente */
-        text-align: center; /* Alineamos el texto al centro */
+        font-size: 0.9rem; 
+        text-align: center; 
+    }
+
+    .productos-destacados-imagenes {
+        grid-template-columns: 1fr !important; 
+    }
+
+    .informacion-adicional {
+        grid-template-columns: 1fr !important;
     }
 }
