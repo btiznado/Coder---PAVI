@@ -1,46 +1,105 @@
 html, body {
-    height: 100%;  
-    margin: 0;  
+    height: 100%;
+    margin: 0;
     padding: 0;
-    box-sizing: border-box;  
+    box-sizing: border-box;
 }
 
 body {
     display: flex;
-    flex-direction: column;  
-    min-height: 100vh;  
-}
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
 
+    .main-container {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 
-.main-container {
-    flex-grow: 1; 
-}
+    .contacto-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+        padding: 2rem;
+        background-color: #f9f9f9;
+        min-height: auto;
+        margin-bottom: 0;
 
-.footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    font-size: 14px;
-    width: 100%;
-}
-.footer-item {
-    flex: 1;
-    text-align: center;
-    margin: 10px;
-}
+        .contacto-info, .contacto-formulario {
+            padding: 1.25rem;
+            background-color: #fff;
+            border-radius: 0.625rem;
+            box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+            min-width: 250px;
+        }
+        
+        .contacto-info {
+            h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                color: #333;
+            }
+        }
+    }
 
-.footer-redes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-}
+    input,
+    textarea {
+        width: 100%;
+        padding: 0.625rem;
+        border: 1px solid #ddd;
+        border-radius: 0.3125rem;
+        font-size: 1rem;
+        
+        &.textarea {
+            resize: vertical;
+        }
+    }
 
-.redes-icono {
-    width: 24px;
-    height: 24px;
+    .enviar-btn {
+        padding: 0.625rem 1.25rem;
+        font-size: 1.125rem;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 0.3125rem;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #555;
+        }
+    }
+
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 1rem 2rem;
+        font-size: 14px;
+        width: 100%;
+        margin-top: auto;
+
+        .footer-item {
+            flex: 1;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .footer-redes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+
+            .redes-icono {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
 }

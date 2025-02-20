@@ -1,21 +1,21 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
-}
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	background-color: #f8f8f8;
+	border-bottom: 1px solid #ddd;
 
-.header__search {
-    flex: 1;
-}
+	&__search {
+    	flex: 1;
 
-.search-bar {
-    width: 100%;
-    max-width: 18rem;
-    padding: 0.5rem 0.75rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    	.search-bar {
+        	width: 100%;
+        	max-width: 18rem;
+        	padding: 0.5rem 0.75rem;
+        	font-size: 1rem;
+        	border: 1px solid #ccc;
+        	border-radius: 4px;
+    	}
+	}
 }

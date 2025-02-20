@@ -1,65 +1,64 @@
 .navbar {
-    background-color: #727171 !important;
-    padding: 0.5rem 1rem;
-    width: 100%;
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    border-bottom: 0.125rem solid #5a5a5a;
-}
+	background-color: #727171 !important;
+	padding: 0.5rem 1rem;
+	width: 100%;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	border-bottom: 0.125rem solid #5a5a5a;
 
-.navbar-toggler {
-    margin-left: auto;
-    border: none;
-}
+	.navbar-toggler {
+    	margin-left: auto;
+    	border: none;
 
-.navbar-toggler:focus {
-    box-shadow: none;
-}
+    	&:focus {
+        	box-shadow: none;
+    	}
+	}
 
-.navbar-nav {
-    list-style: none;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
+	.navbar-nav {
+    	list-style: none;
+    	display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+    	width: 100%;
+    	padding: 0;
+    	margin: 0;
 
-.nav-item {
-    flex: 1;
-    text-align: center; 
-}
+    	.nav-item {
+        	flex: 1;
+        	text-align: center;
 
-.nav-item .nav-link {
-    text-decoration: none;
-    color: white !important;
-    font-size: 1.125rem;
-    padding: 0.625rem 1rem;
-    border-radius: 0.3125rem;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    display: block;
-    width: 100%;  
-}
+        	.nav-link {
+            	text-decoration: none;
+            	color: white !important;
+            	font-size: 1.125rem;
+            	padding: 0.625rem 1rem;
+            	border-radius: 0.3125rem;
+            	transition: background-color 0.3s ease, color 0.3s ease;
+            	display: block;
+            	width: 100%;
 
-.nav-item .nav-link:hover {
-    color: #000000 !important;
-    background-color: rgba(255, 255, 255, 0.3) !important;
-}
+            	&:hover {
+                	color: #000000 !important;
+                	background-color: rgba(255, 255, 255, 0.3) !important;
+            	}
 
-.nav-item .nav-link.active {
-    background-color: #5d5d5c !important;
-    color: #fff !important;
-    font-weight: bold;
+            	&.active {
+                	background-color: #5d5d5c !important;
+                	color: #fff !important;
+                	font-weight: bold;
+            	}
+        	}
+    	}
+	}
 }
-
 
 body.index .navbar {
-    padding: 0.5rem 1rem !important;
+	padding: 0.5rem 1rem !important;
 }
 
 body.index .carousel-inner {
-    height: 50vh !important;
+	height: 50vh !important;
 }

@@ -4,54 +4,57 @@
     gap: 1.25rem;
     padding: 1.875rem;
     background-color: #f9f9f9;
-    min-height: calc(100vh - 200px);
+    min-height: auto;
 
-}
+    .contacto-info, .contacto-formulario {
+        padding: 1.25rem;
+        background-color: #fff;
+        border-radius: 0.625rem;
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    }
 
-.contacto-info, .contacto-formulario {
-    padding: 1.25rem;
-    background-color: #fff;
-    border-radius: 0.625rem;
-    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-}
+    .contacto-info {
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+    }
 
-.contacto-info h1 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-}
+    .contacto-atencion {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
 
-.contacto-atencion {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1rem;
-}
+        .contacto-icon {
+            width: 1.875rem;
+            height: 1.875rem;
+            margin-right: 0.625rem;
+        }
+    }
 
-.contacto-icon {
-    width: 1.875rem;
-    height: 1.875rem;
-    margin-right: 0.625rem;
-}
+    .contacto-formulario {
+        input, 
+        textarea {
+            width: 100%;
+            padding: 0.625rem;
+            border: 1px solid #ddd;
+            border-radius: 0.3125rem;
+        }
 
-.contacto-formulario input, 
-.contacto-formulario textarea {
-    width: 100%;
-    padding: 0.625rem;
-    border: 1px solid #ddd;
-    border-radius: 0.3125rem;
-}
+        .enviar-btn {
+            padding: 0.625rem 1.25rem;
+            font-size: 1.125rem;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0.3125rem;
+            transition: background-color 0.3s;
 
-.enviar-btn {
-    padding: 0.625rem 1.25rem;
-    font-size: 1.125rem;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.3125rem;
-    transition: background-color 0.3s;
-
-    &:hover {
-        background-color: #555;
+            &:hover {
+                background-color: #555;
+            }
+        }
     }
 }
