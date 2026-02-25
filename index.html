@@ -35,8 +35,13 @@
             </a>
         </div>
         <div class="header__icons">
-            <a href="../login.html"><img src="./img/acceso.png" alt="Iniciar sesión" class="icon"></a>
-            <a href="../carrito.html"><img src="./img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon"></a>
+            <a href="./login.html"><img src="./img/acceso.png" alt="Iniciar sesión" class="icon"></a>
+            <a href="#" id="btn-carrito" class="position-relative">
+                <img src="./img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon">
+                <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
+                    0
+                </span>
+            </a>
         </div>
     </header>
 
@@ -47,7 +52,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item"><a class="nav-link active" href="../index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./index.html">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="./pages/productos.html">Productos</a></li>
                 <li class="nav-item"><a class="nav-link" href="./pages/promos.html">Promos</a></li>
                 <li class="nav-item"><a class="nav-link" href="./pages/nosotros.html">Nosotros</a></li>
@@ -55,6 +60,11 @@
             </ul>
         </div>
     </nav>
+
+    <section class="container my-4 text-center">
+        <h3>Sobre nuestro Simulador de Compras</h3>
+        <p>Este simulador interactivo permite a los usuarios de PAVI elegir sus pastas, salsas y quesos favoritos directamente desde la sección de Productos. El sistema calcula automáticamente el subtotal de los productos elegidos, consulta si el cliente desea envío a domicilio y aplica la bonificación de envío gratuito si la compra supera los $25.000.</p>
+    </section>
 
     <div class="main-container">
         <section id="carouselBanner" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -113,7 +123,6 @@
             <p>Comprá con seguridad. Tus datos siempre protegidos</p>
         </div>
     </section>
-    
 
     <footer class="footer">
         <div class="footer-item">© 2024 PAVI - Todos los derechos reservados</div>
@@ -126,5 +135,24 @@
             <a href="https://wa.me/+54xxxxxxxxx" target="_blank"><img src="./img/whatsapp.png" alt="WhatsApp de PAVI" class="redes-icono"></a>
         </div>
     </footer>
+
+    <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="modalCarritoLabel">Tu Pedido en PAVI</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="cuerpo-modal-carrito">
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
+                    <button type="button" class="btn btn-success" id="btn-pagar">Proceder al Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
