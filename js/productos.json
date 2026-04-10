@@ -1,0 +1,6 @@
+[
+    { "id": 1, "nombre": "Pasta Fina", "precio": 1500, "imagen": "pasta fina.jpg" },
+    { "id": 2, "nombre": "Pasta de Huevo", "precio": 2000, "imagen": "pasta de huevo.jpg" },
+    { "id": 3, "nombre": "Salsa Marinara", "precio": 1000, "imagen": "salsa marinara.jpg" },
+    { "id": 4, "nombre": "Queso Parmesano", "precio": 2500, "imagen": "queso parmesano.jpg" }
+]
