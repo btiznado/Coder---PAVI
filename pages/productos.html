@@ -4,26 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Productos | PAVI - Pastas Caseras Artesanales</title>
-
     <meta name="description" content="Descubre la variedad de productos de PAVI: pastas caseras, salsas artesanales y quesos seleccionados para acompañar tus comidas.">
     <meta name="keywords" content="pastas caseras, salsas, quesos, pasta artesanal, comida italiana, PAVI">
     <meta name="author" content="PAVI">
-
-    <meta property="og:title" content="Productos | PAVI - Pastas Caseras Artesanales">
-    <meta property="og:description" content="Descubre la variedad de productos de PAVI: pastas caseras, salsas artesanales y quesos seleccionados para acompañar tus comidas.">
-    <meta property="og:image" content="../img/productos/pasta-fina.jpg">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Productos | PAVI - Pastas Caseras Artesanales">
-    <meta name="twitter:description" content="Descubre la variedad de productos de PAVI: pastas caseras, salsas artesanales y quesos seleccionados para acompañar tus comidas.">
-    <meta name="twitter:image" content="../img/productos/pasta-fina.jpg">
-    <!-- CSS de Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
-
     <header class="header d-flex justify-content-between align-items-center">
         <div class="header__search">
             <input type="text" placeholder="Buscar productos..." class="search-bar" aria-label="Buscar productos">
@@ -37,16 +25,13 @@
             <a href="../login.html"><img src="../img/acceso.png" alt="Iniciar sesión" class="icon"></a>
             <a href="#" id="btn-carrito" class="position-relative">
                 <img src="../img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon">
-                <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
-                    0
-                </span>
+                <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
             </a>
         </div>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -66,7 +51,6 @@
                 <h1>Nuestros Productos</h1>
                 <p>Descubre nuestra selección de <strong>pastas frescas</strong>, <strong>salsas artesanales</strong> y <strong>quesos gourmet</strong>.</p>
             </div>
-    
             <div class="secciones-tienda">
                 <h2>Secciones de la Tienda</h2>
                 <ul class="lista-secciones">
@@ -76,43 +60,8 @@
                 </ul>
             </div>
         </div>
-    
-        <div class="productos-venta">
-            <div class="producto-item">
-                <div class="imagen-contenedor">
-                    <img src="../img/productos/pasta fina.jpg" alt="Pasta fina artesanal" class="producto-imagen">
-                </div>
-                <p class="producto-descripcion">Pasta Fina</p>
-                <p class="producto-precio">$1500</p>
-                <button class="btn btn-secondary mt-2 btn-agregar" data-id="1">Agregar al Carrito</button>
-            </div>
-            
-            <div class="producto-item">
-                <div class="imagen-contenedor">
-                    <img src="../img/productos/pasta de huevo.jpg" alt="Pasta de huevo casera" class="producto-imagen">
-                </div>
-                <p class="producto-descripcion">Pasta de Huevo</p>
-                <p class="producto-precio">$2000</p>
-                <button class="btn btn-secondary mt-2 btn-agregar" data-id="2">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto-item">
-                <div class="imagen-contenedor">
-                    <img src="../img/productos/salsa marinara.jpg" alt="Salsa marinara italiana" class="producto-imagen">
-                </div>
-                <p class="producto-descripcion">Salsa Marinara</p>
-                <p class="producto-precio">$1000</p>
-                <button class="btn btn-secondary mt-2 btn-agregar" data-id="3">Agregar al Carrito</button>
-            </div>
-    
-            <div class="producto-item">
-                <div class="imagen-contenedor">
-                    <img src="../img/productos/queso parmesano.jpg" alt="Queso parmesano curado" class="producto-imagen">
-                </div>
-                <p class="producto-descripcion">Queso Parmesano</p>
-                <p class="producto-precio">$2500</p>
-                <button class="btn btn-secondary mt-2 btn-agregar" data-id="4">Agregar al Carrito</button>
-            </div>
+        <div class="productos-venta" id="contenedor-productos">
+            <div id="loader-productos" class="w-100 text-center my-5">Cargando catálogo...</div>
         </div>
     </section>
 
@@ -127,9 +76,6 @@
             <a href="https://wa.me/+54xxxxxxxxx" target="_blank" rel="noopener"><img src="../img/whatsapp.png" alt="WhatsApp de PAVI" class="redes-icono"></a>
         </div>
     </footer>
-    <div id="aviso-producto" class="alert alert-success position-fixed top-0 start-50 translate-middle-x mt-3 d-none shadow" style="z-index: 2000;">
-        ¡Producto agregado con éxito!
-    </div>
 
     <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarritoLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -138,16 +84,20 @@
                     <h5 class="modal-title" id="modalCarritoLabel">Tu Pedido en PAVI</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
-                <div class="modal-body" id="cuerpo-modal-carrito">
-                    </div>
+                <div class="modal-body" id="cuerpo-modal-carrito"></div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-danger me-auto" id="btn-vaciar">Vaciar</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
                     <button type="button" class="btn btn-success" id="btn-pagar">Proceder al Pago</button>
                 </div>
             </div>
         </div>
     </div>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/api.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

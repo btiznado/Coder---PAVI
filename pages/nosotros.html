@@ -4,50 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros | PAVI - Pastas Caseras Artesanales</title>
-
     <meta name="description" content="Descubre la historia de PAVI, un emprendimiento dedicado a la elaboración de pastas caseras con ingredientes frescos y naturales.">
-    <meta name="keywords" content="Nosotros, historia, pastas caseras, artesanales, ingredientes frescos, PAVI">
-    <meta name="author" content="PAVI">
-
-    <meta property="og:title" content="Nosotros | PAVI - Pastas Caseras Artesanales">
-    <meta property="og:description" content="Descubre la historia de PAVI, un emprendimiento dedicado a la elaboración de pastas caseras con ingredientes frescos y naturales.">
-    <meta property="og:image" content="../img/Nosotros/nosotors-cocina.jpg">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nosotros | PAVI - Pastas Caseras Artesanales">
-    <meta name="twitter:description" content="Descubre la historia de PAVI, un emprendimiento dedicado a la elaboración de pastas caseras con ingredientes frescos y naturales.">
-    <meta name="twitter:image" content="../img/Nosotros/nosotors-cocina.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
-
 <body>
-
     <header class="header d-flex justify-content-between align-items-center">
         <div class="header__search">
             <input type="text" placeholder="Buscar productos..." class="search-bar" aria-label="Buscar productos">
         </div>
         <div class="header__logo mx-auto">
-            <a href="../index.html">
-                <img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo">
-            </a>
+            <a href="../index.html"><img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo"></a>
         </div>
         <div class="header__icons">
             <a href="../login.html"><img src="../img/acceso.png" alt="Iniciar sesión" class="icon"></a>
             <a href="#" id="btn-carrito" class="position-relative">
                 <img src="../img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon">
-                <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
-                    0
-                </span>
+                <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
             </a>
         </div>
     </header>
     
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -64,24 +44,9 @@
     <section class="titulo-nosotros">
         <h1>Nosotros</h1>
         <img src="../img/nosotros/nosotors cocina.jpg" alt="Equipo de PAVI preparando pastas caseras" class="nosotros-imagen">
-        
-        <p class="nosotros-descripcion">
-            En <strong>PAVI</strong> nos especializamos en ofrecer las mejores pastas caseras, elaboradas con ingredientes 
-            frescos y naturales para brindarte una experiencia única en cada bocado. Nuestra pasión por la comida 
-            se refleja en cada plato que preparamos. 
-        </p>
-
-        <p class="nosotros-descripcion">
-            Con más de <strong>10 años de experiencia</strong>, nos hemos convertido en un referente en la producción 
-            de <strong>pastas artesanales</strong>, salsas caseras y quesos seleccionados. Creemos en la tradición 
-            culinaria y en la importancia de un producto hecho con dedicación y amor.
-        </p>
-
-        <p class="nosotros-descripcion">
-            <strong>¿Por qué elegirnos?</strong> 
-            En PAVI nos enfocamos en ofrecer productos de alta calidad, sin conservantes ni aditivos artificiales. 
-            Nuestra misión es llevar a tu mesa el auténtico sabor de la pasta casera, como hecha en casa.
-        </p>
+        <p class="nosotros-descripcion">En <strong>PAVI</strong> nos especializamos en ofrecer las mejores pastas caseras, elaboradas con ingredientes frescos y naturales para brindarte una experiencia única en cada bocado.</p>
+        <p class="nosotros-descripcion">Con más de <strong>10 años de experiencia</strong>, nos hemos convertido en un referente en la producción de <strong>pastas artesanales</strong>, salsas caseras y quesos seleccionados.</p>
+        <p class="nosotros-descripcion"><strong>¿Por qué elegirnos?</strong> En PAVI nos enfocamos en ofrecer productos de alta calidad, sin conservantes ni aditivos artificiales.</p>
     </section>
 
     <footer class="footer">
@@ -103,9 +68,9 @@
                     <h5 class="modal-title" id="modalCarritoLabel">Tu Pedido en PAVI</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
-                <div class="modal-body" id="cuerpo-modal-carrito">
-                    </div>
+                <div class="modal-body" id="cuerpo-modal-carrito"></div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-danger me-auto" id="btn-vaciar">Vaciar</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
                     <button type="button" class="btn btn-success" id="btn-pagar">Proceder al Pago</button>
                 </div>
@@ -114,7 +79,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/api.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

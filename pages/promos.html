@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PAVI - Promociones Especiales</title>
     <meta name="description" content="Descubre las promociones y ofertas exclusivas en PAVI. Ahorra en productos de calidad como pastas, salsas y más.">
-    <meta name="keywords" content="promociones, ofertas, descuentos, pasta, salsas, PAVI, productos, comida artesanal">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
 <body>
@@ -15,43 +15,28 @@
             <input type="text" placeholder="Buscar productos..." class="search-bar" aria-label="Buscar productos">
         </div>
         <div class="header__logo mx-auto">
-            <a href="../index.html">
-                <img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo">
-            </a>
+            <a href="../index.html"><img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo"></a>
         </div>
         <div class="header__icons">
             <a href="../login.html"><img src="../img/acceso.png" alt="Iniciar sesión" class="icon"></a>
             <a href="#" id="btn-carrito" class="position-relative">
                 <img src="../img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon">
-                <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
-                    0
-                </span>
+                <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
             </a>
         </div>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./productos.html">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="./promos.html">Promos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./nosotros.html">Nosotros</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./contactanos.html">Contáctanos</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="./productos.html">Productos</a></li>
+                <li class="nav-item"><a class="nav-link active" href="./promos.html">Promos</a></li>
+                <li class="nav-item"><a class="nav-link" href="./nosotros.html">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="./contactanos.html">Contáctanos</a></li>
             </ul>
         </div>
     </nav>
@@ -61,7 +46,6 @@
             <h1 class="promos-title">Promociones Especiales</h1>
             <img src="../img/banner/promos.jpg" alt="Banner de promociones" class="promos-image">
         </section>
-    
         <section class="promos-seccion">
             <div class="promo-item">
                 <img src="../img/Promos/pastafi.jpg" alt="Pasta Fina" class="promo-imagen">
@@ -103,9 +87,9 @@
                     <h5 class="modal-title" id="modalCarritoLabel">Tu Pedido en PAVI</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
-                <div class="modal-body" id="cuerpo-modal-carrito">
-                    </div>
+                <div class="modal-body" id="cuerpo-modal-carrito"></div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-danger me-auto" id="btn-vaciar">Vaciar</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
                     <button type="button" class="btn btn-success" id="btn-pagar">Proceder al Pago</button>
                 </div>
@@ -114,7 +98,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/api.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

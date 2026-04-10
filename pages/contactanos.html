@@ -4,42 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contáctanos | PAVI - Pastas Caseras</title>
-
     <meta name="description" content="Ponte en contacto con PAVI para realizar pedidos o consultas sobre nuestras pastas caseras, salsas y quesos artesanales.">
-    <meta name="keywords" content="contacto, pastas caseras, salsas, quesos, pedidos, consultas">
-    <meta name="author" content="PAVI">
-    
-    <meta property="og:title" content="Contáctanos | PAVI - Pastas Caseras">
-    <meta property="og:description" content="Ponte en contacto con PAVI para realizar pedidos o consultas sobre nuestras pastas caseras, salsas y quesos artesanales.">
-    <meta property="og:image" content="../img/banner/banner-1.jpg">
-    <meta property="og:type" content="website">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contáctanos | PAVI - Pastas Caseras">
-    <meta name="twitter:description" content="Ponte en contacto con PAVI para realizar pedidos o consultas sobre nuestras pastas caseras, salsas y quesos artesanales.">
-    <meta name="twitter:image" content="../img/banner/banner-1.jpg">
-    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../css/estilos.css">
 </head>
-
 <body>
     <header class="header d-flex justify-content-between align-items-center">
         <div class="header__search">
             <input type="text" placeholder="Buscar productos..." class="search-bar" aria-label="Buscar productos">
         </div>
         <div class="header__logo mx-auto">
-            <a href="../index.html">
-                <img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo">
-            </a>
+            <a href="../index.html"><img src="../img/logo.png" alt="PAVI - Pastas Caseras" class="logo"></a>
         </div>
         <div class="header__icons">
             <a href="../login.html"><img src="../img/acceso.png" alt="Iniciar sesión" class="icon"></a>
             <a href="#" id="btn-carrito" class="position-relative">
                 <img src="../img/carrito-de-compras.png" alt="Ver carrito de compras" class="icon">
-                <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">
-                    0
-                </span>
+                <span id="contador-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
             </a>
         </div>
     </header>
@@ -62,17 +44,14 @@
     <section class="contacto-container">
         <div class="contacto-info">
             <h1>Contáctanos</h1>
-
             <div class="contacto-atencion">
                 <img src="../img/contactanos/whatsapp.png" alt="Contacto por WhatsApp" class="contacto-icon">
                 <p><a href="https://wa.me/+54xxxxxxxxxx" target="_blank" rel="noopener">+54 xxxxxxxxx</a></p>
             </div>
-
             <div class="contacto-atencion">
                 <img src="../img/contactanos/llamada-telefonica.png" alt="Llamar por teléfono" class="contacto-icon">
                 <p><a href="tel:+54xxxxxxxxxx">+54 xxxxxxxxx</a></p>
             </div>
-
             <div class="contacto-atencion">
                 <img src="../img/contactanos/mapas-y-banderas.png" alt="Ubicación de PAVI" class="contacto-icon">
                 <p>Calle, Ciudad, País</p>
@@ -82,16 +61,12 @@
         <form class="contacto-formulario" action="#" method="post">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" name="nombre" placeholder="Ej: María Pérez" required autocomplete="name">
-
             <label for="email">Email</label>
             <input type="email" id="email" name="email" placeholder="Ej: tuemail@email.com" required autocomplete="email">
-
             <label for="telefono">Teléfono</label>
             <input type="tel" id="telefono" name="telefono" placeholder="Ej: 123456678" required autocomplete="tel">
-
             <label for="mensaje">Mensaje</label>
             <textarea id="mensaje" name="mensaje" placeholder="Ej: Tu mensaje" rows="5" required></textarea>
-
             <input type="submit" value="Enviar" class="enviar-btn">
         </form>
     </section>
@@ -115,9 +90,9 @@
                     <h5 class="modal-title" id="modalCarritoLabel">Tu Pedido en PAVI</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
                 </div>
-                <div class="modal-body" id="cuerpo-modal-carrito">
-                    </div>
+                <div class="modal-body" id="cuerpo-modal-carrito"></div>
                 <div class="modal-footer">
+                    <button type="button" class="btn btn-danger me-auto" id="btn-vaciar">Vaciar</button>
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir Comprando</button>
                     <button type="button" class="btn btn-success" id="btn-pagar">Proceder al Pago</button>
                 </div>
@@ -126,7 +101,9 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/api.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>
