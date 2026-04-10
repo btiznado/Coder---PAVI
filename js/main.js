@@ -1,17 +1,79 @@
-// ==========================================
-// PAVI - SIMULADOR DE CARRITO DE COMPRAS
-// ==========================================
-
 const ENVIO_MINIMO = 25000;
 const COSTO_ENVIO = 3000;
 
-const productos = [
-    { id: 1, nombre: "Pasta Fina", precio: 1500 },
-    { id: 2, nombre: "Pasta de Huevo", precio: 2000 },
-    { id: 3, nombre: "Salsa Marinara", precio: 1000 },
-    { id: 4, nombre: "Queso Parmesano", precio: 2500 }
-];
+let productosStock = [];
 let carrito = JSON.parse(localStorage.getItem("carritoPAVI")) || [];
+
+document.addEventListener("DOMContentLoaded", async () => {
+    const esInicio = window.location.pathname.includes("index.html") || window.location.pathname === "/";
+    const rutaJSON = esInicio ? "./js/productos.json" : "../js/productos.json";
+    
+    productosStock = await pedirProductos(rutaJSON);
+    
+    if (productosStock.length > 0) {
+        renderizarProductosDOM(esInicio);
+    }
+    actualizarContador();
+});
+
+function renderizarProductosDOM(esInicio) {
+    const contenedor = document.getElementById("contenedor-productos");
+    if (!contenedor) return;
+
+    contenedor.innerHTML = ""; 
+    const rutaImagenes = esInicio ? "./img/productos/" : "../img/productos/";
+
+    productosStock.forEach(producto => {
+        const divProducto = document.createElement("div");
+        divProducto.className = "producto-item";
+        divProducto.innerHTML = `
+            <div class="imagen-contenedor">
+                <img src="${rutaImagenes}${producto.imagen}" alt="${producto.nombre}" class="producto-imagen">
+            </div>
+            <p class="producto-descripcion">${producto.nombre}</p>
+            <p class="producto-precio">$${producto.precio}</p>
+            <button class="btn btn-secondary mt-2 btn-agregar" data-id="${producto.id}">Agregar al Carrito</button>
+        `;
+        contenedor.appendChild(divProducto);
+    });
+
+    document.querySelectorAll(".btn-agregar").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            const id = parseInt(e.target.getAttribute("data-id"));
+            agregarAlCarrito(id);
+        });
+    });
+}
+
+function agregarAlCarrito(idProducto) {
+    const productoSeleccionado = productosStock.find(p => p.id === idProducto);
+    if (!productoSeleccionado) return;
+
+    const productoEnCarrito = carrito.find(p => p.id === idProducto);
+    if (productoEnCarrito) {
+        productoEnCarrito.cantidad += 1;
+        productoEnCarrito.subtotal = productoEnCarrito.precio * productoEnCarrito.cantidad;
+    } else {
+        carrito.push({
+            id: productoSeleccionado.id,
+            nombre: productoSeleccionado.nombre,
+            precio: productoSeleccionado.precio,
+            cantidad: 1,
+            subtotal: productoSeleccionado.precio
+        });
+    }
+
+    guardarCarritoEnStorage();
+    actualizarContador();
+
+    Toastify({
+        text: `¡Agregaste ${productoSeleccionado.nombre} al carrito!`,
+        duration: 3000,
+        gravity: "top", 
+        position: "center", 
+        style: { background: "#28a745", borderRadius: "10px" }
+    }).showToast();
+}
 
 function guardarCarritoEnStorage() {
     localStorage.setItem("carritoPAVI", JSON.stringify(carrito));
@@ -20,183 +82,201 @@ function guardarCarritoEnStorage() {
 function actualizarContador() {
     let contadorElemento = document.getElementById("contador-carrito");
     if (contadorElemento) {
-        let totalUnidades = 0;
-        for (let i = 0; i < carrito.length; i++) {
-            totalUnidades += carrito[i].cantidad;
-        }
-
+        let totalUnidades = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
         if (totalUnidades > 0) {
             contadorElemento.innerText = totalUnidades;
-            contadorElemento.classList.remove("d-none"); 
+            contadorElemento.classList.remove("d-none");
         } else {
-            contadorElemento.classList.add("d-none"); 
+            contadorElemento.classList.add("d-none");
         }
     }
 }
 
-function mostrarAvisoFlotante(mensaje) {
-    let cartel = document.getElementById("aviso-producto");
-    if (cartel) {
-        cartel.innerText = mensaje;
-        cartel.classList.remove("d-none"); 
-        
-        setTimeout(() => {
-            cartel.classList.add("d-none");
-        }, 3000);
-    }
-}
+function renderizarCarrito() {
+    let cuerpoModal = document.getElementById("cuerpo-modal-carrito");
+    if (!cuerpoModal) return;
 
-function agregarProductoSeleccionado(idProducto) {
-    let productoSeleccionado = productos.find(producto => producto.id === idProducto);
-    
-    if (productoSeleccionado) {
-        let cantidadIngresada = prompt(`Elegiste ${productoSeleccionado.nombre}.\n¿Cuántas unidades deseas llevar?`);
-        let cantidad = parseInt(cantidadIngresada);
-        
-        if (cantidad > 0) {
-            carrito.push({
-                nombre: productoSeleccionado.nombre,
-                precio: productoSeleccionado.precio,
-                cantidad: cantidad,
-                subtotal: productoSeleccionado.precio * cantidad
-            });
-            
-            //  Guarda Local Storage
-            guardarCarritoEnStorage();
-            
-            actualizarContador();
-            mostrarAvisoFlotante(`¡Excelente! Agregaste ${cantidad}x ${productoSeleccionado.nombre} al carrito.`);
-            console.log("Aviso: Producto agregado correctamente.");
-        } else {
-            alert("Error: Debes ingresar un número válido mayor a 0."); 
-        }
-    }
-}
-
-function procesarPedido() {
     if (carrito.length === 0) {
-        if (window.location.pathname.includes("productos.html")) {
-            alert("Tu carrito está vacío.\n¡Agrega productos haciendo clic en el botón 'Agregar al Carrito' debajo de cada foto!");
-        } else {
-            let rutaProductos = window.location.pathname.includes("index.html") || window.location.pathname === "/" 
-                ? "./pages/productos.html" 
-                : "./productos.html";
-            
-            alert("Tu carrito está vacío. ¡Te llevaremos a la sección de productos para que empieces a comprar!");
-            window.location.href = rutaProductos;
-        }
-        return null; 
+        cuerpoModal.innerHTML = "<p class='text-center my-4'>Tu carrito está vacío.</p>";
+        document.getElementById("btn-pagar").disabled = true;
+        document.getElementById("btn-vaciar").disabled = true;
+        return;
     }
 
-    let subtotalCompra = 0;
-    let textoLista = "=== TU CARRITO ACTUAL ===\n\n";
-    
-    for (let i = 0; i < carrito.length; i++) {
-        subtotalCompra += carrito[i].subtotal;
-        textoLista += `${carrito[i].cantidad}x ${carrito[i].nombre} - $${carrito[i].subtotal}\n`;
-    }
+    document.getElementById("btn-pagar").disabled = false;
+    document.getElementById("btn-vaciar").disabled = false;
+    let subtotalCompra = carrito.reduce((acc, prod) => acc + prod.subtotal, 0);
 
-    textoLista += `\nSubtotal de productos: $${subtotalCompra}\n`;
-
-    let costoEnvioFinal = 0;
-    
-    let pideEnvio = confirm(`${textoLista}\n¿Necesitas envío a domicilio?\n\n(Envío gratis en compras mayores a $${ENVIO_MINIMO})`);
-        
-    if (pideEnvio) {
-        if (subtotalCompra >= ENVIO_MINIMO) {
-            mostrarAvisoFlotante(`¡Felicidades! Tienes ENVÍO GRATIS a Bahía Blanca.`);
-        } else {
-            costoEnvioFinal = COSTO_ENVIO;
-            mostrarAvisoFlotante(`Se sumarán $${COSTO_ENVIO} de envío al total.`);
-        }
-    }
-
-    return { 
-        subtotal: subtotalCompra, 
-        costoEnvio: costoEnvioFinal, 
-        totalPagar: subtotalCompra + costoEnvioFinal,
-        envioSolicitado: pideEnvio
-    };
-}
-
-function mostrarTicket(datosProcesados) {
     let ticketHTML = "<ul class='list-group mb-3'>";
-    for (let i = 0; i < carrito.length; i++) {
-        ticketHTML += `<li class='list-group-item d-flex justify-content-between align-items-center'>
-            ${carrito[i].cantidad}x ${carrito[i].nombre}
-            <span class='badge bg-secondary rounded-pill'>$${carrito[i].subtotal}</span>
-        </li>`;
-    }
+    carrito.forEach((prod, index) => {
+        ticketHTML += `
+            <li class='list-group-item d-flex justify-content-between align-items-center'>
+                <div>
+                    <strong>${prod.nombre}</strong><br>
+                    <small>${prod.cantidad} unid. x $${prod.precio}</small>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <span class='badge bg-secondary rounded-pill fs-6'>$${prod.subtotal}</span>
+                    <button class="btn btn-sm btn-outline-danger btn-eliminar" data-index="${index}">X</button>
+                </div>
+            </li>`;
+    });
     ticketHTML += "</ul>";
-    
-    ticketHTML += `<p class='mb-1'><strong>Subtotal:</strong> $${datosProcesados.subtotal}</p>`;
-    if (datosProcesados.envioSolicitado) {
-        ticketHTML += `<p class='mb-1'><strong>Costo de Envío:</strong> $${datosProcesados.costoEnvio}</p>`;
-    }
-    ticketHTML += `<hr><h4 class='text-end mt-3'>TOTAL: <span class='text-success'>$${datosProcesados.totalPagar}</span></h4>`;
 
-    document.getElementById("cuerpo-modal-carrito").innerHTML = ticketHTML;
-    let modalElement = document.getElementById("modalCarrito");
-    let modalObj = new bootstrap.Modal(modalElement);
-    modalObj.show();
+    ticketHTML += `
+        <div class="form-check mb-3 p-3 bg-light rounded border">
+            <input class="form-check-input ms-1" type="checkbox" id="check-envio">
+            <label class="form-check-label ms-2 fw-bold" for="check-envio">
+                ¿Solicitar envío a domicilio?
+            </label>
+            <div class="form-text ms-2">Envío gratis en compras mayores a $${ENVIO_MINIMO}</div>
+        </div>
+    `;
 
-    console.log("=== RESUMEN DE TU PEDIDO EN PAVI ===");
-    console.table(carrito);
-    console.log("TOTAL A PAGAR: $" + datosProcesados.totalPagar);
-}
+    ticketHTML += `<p class='mb-1 fs-5'><strong>Subtotal:</strong> $<span id="monto-subtotal">${subtotalCompra}</span></p>`;
+    ticketHTML += `<p class='mb-1 text-danger' id="linea-envio" style="display:none;"><strong>Costo de Envío:</strong> $<span id="costo-envio-txt">0</span></p>`;
+    ticketHTML += `<hr><h3 class='text-end mt-3 fw-bold'>TOTAL: $<span id="total-final" class='text-success'>${subtotalCompra}</span></h3>`;
 
-const botonesAgregar = document.querySelectorAll(".btn-agregar");
+    cuerpoModal.innerHTML = ticketHTML;
 
-for (let i = 0; i < botonesAgregar.length; i++) {
-    botonesAgregar[i].addEventListener("click", function() {
-        let id = parseInt(this.getAttribute("data-id"));
-        agregarProductoSeleccionado(id);
+    document.querySelectorAll(".btn-eliminar").forEach(btn => {
+        btn.addEventListener("click", function() {
+            let idx = this.getAttribute("data-index");
+            carrito.splice(idx, 1);
+            guardarCarritoEnStorage();
+            actualizarContador();
+            renderizarCarrito(); 
+        });
+    });
+
+    let checkEnvio = document.getElementById("check-envio");
+    let lineaEnvio = document.getElementById("linea-envio");
+    let costoEnvioTxt = document.getElementById("costo-envio-txt");
+    let totalFinalTxt = document.getElementById("total-final");
+
+    checkEnvio.addEventListener("change", function() {
+        let costoEnvio = 0;
+        if (this.checked) {
+            lineaEnvio.style.display = "block";
+            if (subtotalCompra < ENVIO_MINIMO) {
+                costoEnvio = COSTO_ENVIO;
+            } else {
+                Toastify({
+                    text: "¡Bonificación aplicada! Envío gratis.",
+                    duration: 3000,
+                    gravity: "bottom",
+                    position: "right",
+                    style: { background: "#17a2b8", borderRadius: "10px" }
+                }).showToast();
+            }
+        } else {
+            lineaEnvio.style.display = "none";
+        }
+        costoEnvioTxt.innerText = costoEnvio;
+        totalFinalTxt.innerText = subtotalCompra + costoEnvio;
     });
 }
 
 const btnCarrito = document.getElementById("btn-carrito");
-
 if (btnCarrito) {
     btnCarrito.addEventListener("click", function(evento) {
         evento.preventDefault(); 
-        let resultados = procesarPedido();  
-        if (resultados) {
-            mostrarTicket(resultados);          
+        if (carrito.length === 0 && !window.location.pathname.includes("productos.html")) {
+            let rutaProductos = window.location.pathname.includes("index.html") || window.location.pathname === "/" 
+                ? "./pages/productos.html" : "./productos.html";
+            window.location.href = rutaProductos;
+            return;
         }
+        renderizarCarrito();  
+        let modalElement = document.getElementById("modalCarrito");
+        let modalObj = new bootstrap.Modal(modalElement);
+        modalObj.show();
     });
 }
 
 const btnSeguirComprando = document.querySelector("#modalCarrito .btn-secondary");
-
 if (btnSeguirComprando) {
     btnSeguirComprando.addEventListener("click", function() {
-        let rutaProductos = window.location.pathname.includes("index.html") || window.location.pathname === "/" 
-            ? "./pages/productos.html" 
-            : "./productos.html";
-        window.location.href = rutaProductos;
+        if (!window.location.pathname.includes("productos.html")) {
+            let rutaProductos = window.location.pathname.includes("index.html") || window.location.pathname === "/" 
+                ? "./pages/productos.html" : "./productos.html";
+            window.location.href = rutaProductos;
+        } else {
+            let modalElement = document.getElementById("modalCarrito");
+            bootstrap.Modal.getInstance(modalElement).hide();
+        }
     });
 }
 
-const btnPagar = document.querySelector("#modalCarrito .btn-success");
+const btnVaciar = document.getElementById("btn-vaciar");
+if (btnVaciar) {
+    btnVaciar.addEventListener("click", () => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "Se eliminarán todos los productos del carrito.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#333',
+            confirmButtonText: 'Sí, vaciar',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                carrito = [];
+                guardarCarritoEnStorage();
+                actualizarContador();
+                renderizarCarrito();
+                Swal.fire({
+                    title: 'Carrito vacío',
+                    text: 'Tu carrito ha sido limpiado.',
+                    icon: 'success',
+                    confirmButtonColor: '#333'
+                });
+            }
+        });
+    });
+}
 
+const btnPagar = document.getElementById("btn-pagar");
 if (btnPagar) {
     btnPagar.addEventListener("click", function() {
-        alert("¡Muchas gracias por tu compra en PAVI!\n\nTu pedido está siendo procesado.");
-        
-        // Vaciamos 
-        carrito = []; 
-        guardarCarritoEnStorage(); 
-        
-        actualizarContador(); 
-        
         let modalElement = document.getElementById("modalCarrito");
-        let modalObj = bootstrap.Modal.getInstance(modalElement);
-        if (modalObj) {
-            modalObj.hide();
-        }
+        bootstrap.Modal.getInstance(modalElement).hide();
 
-        console.clear();
-        console.log("El carrito ha sido vaciado para un nuevo pedido.");
+        Swal.fire({
+            title: 'Finalizar Compra',
+            html: `
+                <p>Confirma tus datos para el envío:</p>
+                <input id="swal-input1" class="swal2-input" value="María Pérez">
+                <input id="swal-input2" class="swal2-input" value="mariaperez@email.com">
+                <input id="swal-input3" class="swal2-input" value="Calle Falsa 123">
+            `,
+            focusConfirm: false,
+            showCancelButton: true,
+            confirmButtonText: 'Confirmar y Pagar',
+            cancelButtonText: 'Cancelar',
+            confirmButtonColor: '#28a745',
+            cancelButtonColor: '#d33',
+            preConfirm: () => {
+                return [
+                    document.getElementById('swal-input1').value,
+                    document.getElementById('swal-input2').value,
+                    document.getElementById('swal-input3').value
+                ]
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                carrito = []; 
+                guardarCarritoEnStorage(); 
+                actualizarContador(); 
+                
+                Swal.fire({
+                    title: '¡Pago Exitoso!',
+                    text: 'Gracias por tu compra. Tu pedido está en camino a tu mesa.',
+                    icon: 'success',
+                    confirmButtonColor: '#333'
+                });
+            }
+        });
     });
 }
-actualizarContador();
